@@ -1,6 +1,6 @@
 {
     "name": "@gavant/glint-template-types",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Template types for ember/glimmer glint",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
