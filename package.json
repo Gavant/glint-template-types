@@ -1,20 +1,20 @@
 {
-  "name": "@gavant/glint-template-types",
-  "version": "0.0.0",
-  "description": "Template types for ember/glimmer glint",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "MIT",
-  "keywords": [],
-  "types": "types/index.d.ts",
-  "dependencies": {
-    "typescript": "next"
-  },
-  "devDependencies": {
-    "@glint/core": "^0.4.6",
-    "@glint/environment-ember-loose": "^0.4.6"
-  }
+    "name": "@gavant/glint-template-types",
+    "version": "0.0.0",
+    "description": "Template types for ember/glimmer glint",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Gavant",
+    "license": "MIT",
+    "keywords": [],
+    "types": "types/index.d.ts",
+    "dependencies": {},
+    "devDependencies": {
+        "@glint/core": "^0.4.6",
+        "@glint/environment-ember-loose": "^0.4.6",
+        "auto-changelog": "^2.2.1",
+        "release-it": "^14.6.1",
+        "typescript": "^4.2.4"
+    }
 }

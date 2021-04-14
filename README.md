@@ -1,0 +1,1 @@
+This package contains types that are needed by glint (temporarily).
