@@ -5,10 +5,11 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "main": "types",
     "author": "Gavant",
     "license": "MIT",
     "keywords": [],
-    "types": "types/index.d.ts",
+    "types": "index.d.ts",
     "dependencies": {},
     "devDependencies": {
         "@glint/core": "^0.4.6",
