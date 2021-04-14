@@ -12,6 +12,7 @@
     "types": "index.d.ts",
     "dependencies": {},
     "devDependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.35",
         "@glint/core": "^0.4.6",
         "@glint/environment-ember-loose": "^0.4.6",
         "auto-changelog": "^2.2.1",
