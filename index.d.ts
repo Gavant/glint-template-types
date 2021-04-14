@@ -7,5 +7,6 @@ declare module '@glint/environment-ember-loose/registry' {
         'did-insert': typeof DidInsertModifier;
         'did-update': typeof DidUpdateModifier;
         FaIcon: typeof FaIconComponent;
+        'fa-icon': typeof FaIconComponent;
     }
 }
