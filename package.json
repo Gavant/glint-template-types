@@ -13,9 +13,13 @@
     "dependencies": {},
     "devDependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.35",
+        "@gavant/ember-bootstrap-dropdown": "^1.0.4",
+        "@gavant/ember-button-basic": "^1.0.1",
+        "@gavant/ember-button-spinner": "^1.0.1",
         "@glint/core": "^0.4.6",
         "@glint/environment-ember-loose": "^0.4.6",
         "auto-changelog": "^2.2.1",
+        "ember-basic-dropdown": "^3.0.16",
         "release-it": "^14.6.1",
         "typescript": "^4.2.4"
     },
