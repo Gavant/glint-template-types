@@ -6,9 +6,9 @@ import { ButtonComponent } from '@gavant/glint-template-types/types/@gavant/embe
 import { ButtonSpinnerComponent } from '@gavant/glint-template-types/types/@gavant/ember-button-spinner/component';
 import { Dropdown } from '@gavant/glint-template-types/types/ember-basic-dropdown/dropdown';
 import { TranslationHelper } from '@gavant/glint-template-types/types/ember-intl/translation-helper';
+import { ModalDialogComponent } from '@gavant/glint-template-types/types/ember-modal-dialog/modal-dialog';
 import { DidInsertModifier } from '@gavant/glint-template-types/types/ember-render-modifiers/did-insert';
 import { DidUpdateModifier } from '@gavant/glint-template-types/types/ember-render-modifiers/did-update';
-import { ModalDialogComponent } from './types/@gavant/gavant-ember-modals/modal-dialog';
 
 declare module '@glint/environment-ember-loose/registry' {
     export default interface Registry {
