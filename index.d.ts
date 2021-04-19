@@ -8,6 +8,7 @@ import { Dropdown } from '@gavant/glint-template-types/types/ember-basic-dropdow
 import { TranslationHelper } from '@gavant/glint-template-types/types/ember-intl/translation-helper';
 import { DidInsertModifier } from '@gavant/glint-template-types/types/ember-render-modifiers/did-insert';
 import { DidUpdateModifier } from '@gavant/glint-template-types/types/ember-render-modifiers/did-update';
+import { ModalDialogComponent } from './types/@gavant/gavant-ember-modals/modal-dialog';
 
 declare module '@glint/environment-ember-loose/registry' {
     export default interface Registry {
@@ -22,5 +23,6 @@ declare module '@glint/environment-ember-loose/registry' {
         ButtonSpinner: typeof ButtonSpinnerComponent;
         Button: typeof ButtonComponent;
         t: typeof TranslationHelper;
+        ModalDialog: typeof ModalDialogComponent;
     }
 }
