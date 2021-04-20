@@ -1209,52 +1209,52 @@
     "@glimmer/interfaces" "^0.42.2"
     "@glimmer/util" "^0.42.2"
 
-"@glint/config@^0.4.8":
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/@glint/config/-/config-0.4.8.tgz#c009af4d89dfdfa888943b882e83314abe85d716"
-  integrity sha512-84JLBPXilLt2jsDgO4YyGq2CJykad17aBA2lZkV8sOYXUVEnC8dChdovH/dyMumHSTIW3STxw7dueysKcD3k5Q==
+"@glint/config@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@glint/config/-/config-0.5.1.tgz#e0fde1bbb568865357cb73f358a5a55e2b9e44f6"
+  integrity sha512-ilMCeyihkeLpngBBbWrJCs5K0W9w0Bf+fOzpoRypQh1PbngK8d2zBh/YVW39uijapJgDSkIZpJLC/luT1f3hXw==
   dependencies:
     cosmiconfig "^6.0.0"
     escape-string-regexp "^4.0.0"
     minimatch "^3.0.4"
     resolve "^1.17.0"
 
-"@glint/core@^0.4.8":
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/@glint/core/-/core-0.4.8.tgz#e7b37cde2943510f6d9de86d9a13a80cddf8aa92"
-  integrity sha512-YK/pOfwPsfBSCgY7sX7RAMWDjTQsTtUYgBc/Yky08YGsFJUzm2dZ1UMnf/7W5o/kK2PbRwNP36adoOBO9LU4Eg==
+"@glint/core@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@glint/core/-/core-0.5.1.tgz#f48c9992398bd7ccc63eeacbd30d19c2ba5a64da"
+  integrity sha512-3UIoyTQEEXQVfxZHK3o7GAB8GXJOsSmmvTf8m57t6MGDXtND4kNUJZQ5FLIvnpDt9ol4xSzaoFcQLszYeX8VxQ==
   dependencies:
-    "@glint/config" "^0.4.8"
-    "@glint/transform" "^0.4.8"
+    "@glint/config" "^0.5.1"
+    "@glint/transform" "^0.5.1"
     resolve "^1.17.0"
     vscode-languageserver "^7.0.0"
     vscode-languageserver-textdocument "^1.0.1"
     vscode-uri "^3.0.2"
     yargs "^15.3.1"
 
-"@glint/environment-ember-loose@^0.4.8":
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/@glint/environment-ember-loose/-/environment-ember-loose-0.4.8.tgz#bec435dfa6493ed8b059cbac7c5fc7e0d54e0abd"
-  integrity sha512-fPi5F+Gw9Rp4te2qDBYSfcv2Q4sNyqIxFm2Xhf+bEXTBDCAKw2fUjx21jj6+sdA/ayeiXWbk8ZPnIl3YvZdtew==
+"@glint/environment-ember-loose@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@glint/environment-ember-loose/-/environment-ember-loose-0.5.1.tgz#e7ec26aedec611d0265b0e833016c67e54145314"
+  integrity sha512-JH9Mxao/OeNlxfH140gcBxaWOuecSa+szSGGl5JM/R0OXWpqqX0H48hPC3IoaFurS0/jdo+Rcu4jCIq0X/+RMg==
   dependencies:
-    "@glint/config" "^0.4.8"
-    "@glint/template" "^0.4.8"
+    "@glint/config" "^0.5.1"
+    "@glint/template" "^0.5.1"
 
-"@glint/template@^0.4.8":
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/@glint/template/-/template-0.4.8.tgz#31d5b5a6003681f1583a49cc6bad624b2a445e7d"
-  integrity sha512-nE+CvunZ4R8klm+EHeRcnmQ8EONTsaMuyn6ew/fN6gDKKX0AQaEq6f96s2z1CaBkPWQM8qtkYGioNfXd3yhWlQ==
+"@glint/template@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@glint/template/-/template-0.5.1.tgz#b1b9ef5234a2c8f506065867a5df2cb5037c8d7d"
+  integrity sha512-FlVBWjubBJ94jlkRAr68RI1SZU4JCB1wShKIXVzushwq94kta9xPsFgM1l4UxllOYqGWArbPsQaHjFBXHf8CyQ==
 
-"@glint/transform@^0.4.8":
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/@glint/transform/-/transform-0.4.8.tgz#d05d0f99e827d62b9194617728c5961d4e4dba5d"
-  integrity sha512-LAIJMr8pYbf3rT2yxQ1ZfqlPMfnVY4PRtkI0hXt2LwpM0p5vjuUmr+k4GGumWZX82xEKrpgqLUVoru52LFGH7A==
+"@glint/transform@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@glint/transform/-/transform-0.5.1.tgz#cad012e8d150857f6088e34c6b1abf079de8963f"
+  integrity sha512-7xK5rPHZ7Ko0m4e0PkQFHjr2UBRmtl/B1jATYRUfJfi8zOWoWdrL72rfQiXteEQSGHhcArpzNbm8eavsB2A7Hg==
   dependencies:
     "@babel/core" "^7.11.6"
     "@babel/plugin-proposal-decorators" "7.10.5"
     "@babel/preset-typescript" "^7.10.4"
     "@glimmer/syntax" "^0.68.1"
-    "@glint/config" "^0.4.8"
+    "@glint/config" "^0.5.1"
 
 "@handlebars/parser@^1.1.0":
   version "1.1.0"
@@ -1427,6 +1427,23 @@
     "@types/node" "*"
     "@types/responselike" "*"
 
+"@types/ember__component@*", "@types/ember__component@^3.16.4":
+  version "3.16.4"
+  resolved "https://registry.yarnpkg.com/@types/ember__component/-/ember__component-3.16.4.tgz#545b35d8aa861eb4753e26b6a2cbde43d8524f89"
+  integrity sha512-AQKKspusr/28HoRJ7aK+PHx0r5At0LwStCijNlhxPLXAkK8tOBcEoVqMd1TT5xNXKCxzmgbGPf8pjR6Xbc1/Iw==
+  dependencies:
+    "@types/ember__component" "*"
+    "@types/ember__object" "*"
+    "@types/jquery" "*"
+
+"@types/ember__object@*":
+  version "3.12.5"
+  resolved "https://registry.yarnpkg.com/@types/ember__object/-/ember__object-3.12.5.tgz#f3d5ea5e410d52b3e837267e411d72d7469eb844"
+  integrity sha512-IToStKZ6bNfkiqjhpnpf24NADNIqrSd3pmpc0ktRilrMZPoHyexcXW6zyGENtpFJE7O7dVjtPh/MzUYYH0urww==
+  dependencies:
+    "@types/ember__object" "*"
+    "@types/rsvp" "*"
+
 "@types/fs-extra@^5.0.5":
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-5.1.0.tgz#2a325ef97901504a3828718c390d34b8426a10a1"
@@ -1446,6 +1463,13 @@
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/http-cache-semantics/-/http-cache-semantics-4.0.0.tgz#9140779736aa2655635ee756e2467d787cfe8a2a"
   integrity sha512-c3Xy026kOF7QOTn00hbIllV1dLR9hG9NkSrLQgCVs8NF6sBU+VGWjD3wLPhmh1TYAc7ugCFsvHYMN4VcBN1U1A==
+
+"@types/jquery@*":
+  version "3.5.5"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.5.tgz#2c63f47c9c8d96693d272f5453602afd8338c903"
+  integrity sha512-6RXU9Xzpc6vxNrS6FPPapN1SxSHgQ336WC6Jj/N8q30OiaBZ00l1GBgeP7usjVZPivSkGUfL1z/WW6TX989M+w==
+  dependencies:
+    "@types/sizzle" "*"
 
 "@types/keyv@*":
   version "3.1.1"
@@ -1483,6 +1507,16 @@
   dependencies:
     "@types/glob" "*"
     "@types/node" "*"
+
+"@types/rsvp@*":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@types/rsvp/-/rsvp-4.0.3.tgz#4a1223158453257bce09d42b9eef7cfa6d257482"
+  integrity sha512-OpRwxbgx16nL/0/7ol0WoLLyLaMXBvtPOHjqLljnzAB/E7Qk1wtjytxgBhOTBMZvuLXnJUqfnjb4W/QclNFvSA==
+
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
+  integrity sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
 
 "@types/symlink-or-copy@^1.2.0":
   version "1.2.0"
@@ -3782,6 +3816,11 @@ execa@^4.0.0, execa@^4.0.2:
     onetime "^5.1.0"
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
+
+expect-type@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/expect-type/-/expect-type-0.11.0.tgz#bce1a3e283f0334eedb39699b57dd27be7009cc1"
+  integrity sha512-hkObxepDKhTYloH/UZoxYTT2uUzdhvDEwAi0oqdk29XEkHF8p+5ZRpX/BZES2PtGN9YgyEqutIjXfnL9iMflMw==
 
 extend@~3.0.2:
   version "3.0.2"
