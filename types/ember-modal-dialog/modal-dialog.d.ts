@@ -1,4 +1,4 @@
-import Component, { ArgsFor } from '@glint/environment-ember-loose/ember-component';
+import Component from '@glint/environment-ember-loose/ember-component';
 
 import { BaseGlimmerSignature } from '@gavant/glint-template-types/utils/types';
 
@@ -152,6 +152,7 @@ export interface ModalDialogArgs {
      */
     wrapperClassNames?: string;
 }
+declare class ModalDialogComponent extends Component<BaseGlimmerSignature<ModalDialogArgs>> {}
 
-export interface ModalDialogComponent extends ArgsFor<BaseGlimmerSignature<ModalDialogArgs>> {}
-export declare class ModalDialogComponent extends Component<BaseGlimmerSignature<ModalDialogArgs>> {}
+export { ModalDialogComponent };
+export default ModalDialogComponent;

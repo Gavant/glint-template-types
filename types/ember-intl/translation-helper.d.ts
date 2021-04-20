@@ -8,3 +8,6 @@ declare class TranslationHelper extends Helper<{
     };
     Return: string;
 }> {}
+
+export { TranslationHelper };
+export default TranslationHelper;

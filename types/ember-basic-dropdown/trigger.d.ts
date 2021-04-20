@@ -23,4 +23,7 @@ export interface DropdownTriggerArgs {
     onTouchEnd?: (dropdown?: Dropdown, event?: TouchEvent) => void;
 }
 
-export declare class DropdownTrigger extends Component<BaseGlimmerSignature<DropdownTriggerArgs>> {}
+declare class DropdownTrigger extends Component<BaseGlimmerSignature<DropdownTriggerArgs>> {}
+
+export { DropdownTrigger };
+export default DropdownTrigger;

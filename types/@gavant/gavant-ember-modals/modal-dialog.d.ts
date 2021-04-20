@@ -1,5 +1,5 @@
 import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
-import Component, { ArgsFor } from '@glint/environment-ember-loose/ember-component';
+import Component from '@glint/environment-ember-loose/ember-component';
 
 import {
     ModalDialogBodyComponent
@@ -43,13 +43,9 @@ interface ModalDialogYields {
     };
 }
 
-export interface ModalDialogComponent extends ArgsFor<BaseGlimmerSignature<GavantModalDialogArgs>> {}
-export declare class ModalDialogComponent extends Component<
+declare class ModalDialogComponent extends Component<
     ModifyYields<BaseGlimmerSignature<GavantModalDialogArgs>, ModalDialogYields>
 > {}
 
-declare module '@glint/environment-ember-loose/registry' {
-    export default interface Registry {
-        ModalDialog: typeof ModalDialogComponent;
-    }
-}
+export { ModalDialogComponent };
+export default ModalDialogComponent;
