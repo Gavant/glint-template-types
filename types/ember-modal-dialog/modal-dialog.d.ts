@@ -152,7 +152,6 @@ export interface ModalDialogArgs {
      */
     wrapperClassNames?: string;
 }
-declare class ModalDialogComponent extends Component<BaseGlimmerSignature<ModalDialogArgs>> {}
 
-export { ModalDialogComponent };
+export class ModalDialogComponent extends Component<BaseGlimmerSignature<ModalDialogArgs>> {}
 export default ModalDialogComponent;

@@ -43,9 +43,7 @@ interface ModalDialogYields {
     };
 }
 
-declare class ModalDialogComponent extends Component<
+export class ModalDialogComponent extends Component<
     ModifyYields<BaseGlimmerSignature<GavantModalDialogArgs>, ModalDialogYields>
 > {}
-
-export { ModalDialogComponent };
 export default ModalDialogComponent;

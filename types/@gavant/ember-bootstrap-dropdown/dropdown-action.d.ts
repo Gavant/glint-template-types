@@ -8,4 +8,4 @@ export interface DDActionArgs extends Omit<DropdownActionArgs, 'dd'> {
     dd: BasicDropdown;
 }
 
-export declare class DropdownAction extends Component<BaseGlimmerSignature<DDActionArgs>> {}
+export default class DropdownAction extends Component<BaseGlimmerSignature<DDActionArgs>> {}

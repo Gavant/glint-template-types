@@ -8,7 +8,5 @@ interface ModalDialogHeaderArgs {
     onClose: () => void;
 }
 
-declare class ModalDialogHeaderComponent extends Component<BaseGlimmerSignature<ModalDialogHeaderArgs>> {}
-
-export { ModalDialogHeaderComponent };
+export class ModalDialogHeaderComponent extends Component<BaseGlimmerSignature<ModalDialogHeaderArgs>> {}
 export default ModalDialogHeaderComponent;

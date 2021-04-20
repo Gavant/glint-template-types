@@ -8,4 +8,4 @@ export interface DDLinkArgs extends Omit<DropdownLinkArgs, 'dd'> {
     dd: BasicDropdown;
 }
 
-export declare class DropdownLink extends Component<BaseGlimmerSignature<DDLinkArgs>> {}
+export default class DropdownLink extends Component<BaseGlimmerSignature<DDLinkArgs>> {}

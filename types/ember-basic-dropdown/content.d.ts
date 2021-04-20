@@ -28,7 +28,5 @@ export interface DropdownContentArgs {
     shouldReposition?: (mutations: MutationRecord[], dropdown: Dropdown) => boolean;
 }
 
-declare class DropdownContent extends Component<BaseGlimmerSignature<DropdownContentArgs>> {}
-
-export { DropdownContent };
+export class DropdownContent extends Component<BaseGlimmerSignature<DropdownContentArgs>> {}
 export default DropdownContent;
