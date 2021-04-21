@@ -1,3 +1,5 @@
+import { ComponentSignature } from "@glint/environment-ember-loose";
+
 /**
  * Workaround for https://discord.com/channels/480462759797063690/484421406659182603/827512106696966154
  *
@@ -27,3 +29,9 @@ export interface BaseGlimmerSignature<T> {
  * @template T
  */
 export type ModifyYields<T, Y> = Omit<T, 'Yields'> & Y;
+
+export type SignatureWithPositionedArg<S extends ComponentSignature, K extends keyof S['Args']> = {
+  Args: Omit<S['Args'], K>,
+  PositionalArgs: [S['Args'][K]],
+  Yields: S['Yields']
+};

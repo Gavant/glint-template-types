@@ -22,6 +22,7 @@
         "@types/ember__polyfills": "^3.12.1",
         "@types/ember__runloop": "^3.16.3",
         "auto-changelog": "^2.2.1",
+        "ember-animated": "^0.10.1",
         "ember-basic-dropdown": "^3.0.16",
         "expect-type": "^0.11.0",
         "release-it": "^14.6.1",
