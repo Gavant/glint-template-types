@@ -33,5 +33,5 @@ export type ModifyYields<T, Y> = Omit<T, 'Yields'> & Y;
 export type SignatureWithPositionedArg<S extends ComponentSignature, K extends keyof S['Args']> = {
   Args: Omit<S['Args'], K>,
   PositionalArgs: [S['Args'][K]],
-  Yields: S['Yields']
+  Yields: 'Yields' extends keyof S ? S['Yields'] : undefined
 };
