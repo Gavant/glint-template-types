@@ -1,14 +1,12 @@
 This package contains types that are needed by glint (temporarily).
 
-In order to use this, you must add
+In order to use this, you must import the types from this package, and manually add them to the glint registry
 
 ```
-import '@glint/environment-ember-loose/registry';
-
-import { FaIconComponent } from '@gavant/glint-template-types/types/@fortawesome/ember-fontawesome/fa-icon';
-import { DidInsertModifier } from '@gavant/glint-template-types/types/ember-render-modifiers/did-insert';
+import FaIconComponent from '@gavant/glint-template-types/types/@fortawesome/ember-fontawesome/fa-icon';
+import DidInsertModifier from '@gavant/glint-template-types/types/ember-render-modifiers/did-insert';
 ...
-import { DidUpdateModifier } from '@gavant/glint-template-types/types/ember-render-modifiers/did-update';
+import DidUpdateModifier from '@gavant/glint-template-types/types/ember-render-modifiers/did-update';
 
 
 
@@ -23,5 +21,3 @@ declare module '@glint/environment-ember-loose/registry' {
 }
 
 ```
-
-to your project. Just import any types you need and add them to the registry
