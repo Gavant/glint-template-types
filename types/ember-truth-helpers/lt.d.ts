@@ -1,3 +1,3 @@
-import { ComparisonHelper as LtHelper } from "./base";
+import { ComparisonHelper as LtHelper } from "./-private/shared";
 
 export default LtHelper;

@@ -1,4 +1,4 @@
-import { RenderModifier as DidUpdateModifier } from "./base";
+import { RenderModifier as DidUpdateModifier } from "./-private/shared";
 
 export { DidUpdateModifier };
 export default DidUpdateModifier;

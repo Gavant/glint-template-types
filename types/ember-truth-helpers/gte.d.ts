@@ -1,3 +1,3 @@
-import { ComparisonHelper as GteHelper } from "./base";
+import { ComparisonHelper as GteHelper } from "./-private/shared";
 
 export default GteHelper;
