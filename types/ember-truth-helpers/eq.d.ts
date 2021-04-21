@@ -1,3 +1,3 @@
-import { EqualityHelper as EqHelper } from "./base";
+import { EqualityHelper as EqHelper } from "./-private/shared";
 
 export default EqHelper;

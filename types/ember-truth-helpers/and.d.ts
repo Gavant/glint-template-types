@@ -1,5 +1,5 @@
 import Helper from "@glint/environment-ember-loose/ember-component/helper";
-import { Falsy, Maybe, UnsetValue } from "./base";
+import { Falsy, Maybe, UnsetValue } from "./-private/shared";
 
 // NOTE: These types are somewhat imperfect.
 // For instance, the limit at 5 is arbitrary. Also, the actual helpers
