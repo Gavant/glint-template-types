@@ -1,5 +1,5 @@
 import { BurgerMenuState } from '@gavant/glint-template-types/types/ember-burger-menu/burger-menu';
-import Component, { ArgsFor } from '@glint/environment-ember-loose/ember-component';
+import Component from '@glint/environment-ember-loose/ember-component';
 
 export interface BmOutletComponentSignature {
     Args: {
@@ -8,7 +8,6 @@ export interface BmOutletComponentSignature {
     };
 }
 
-export interface BmOutletComponent extends ArgsFor<BmOutletComponentSignature> {}
 export declare class BmOutletComponent extends Component<BmOutletComponentSignature> {}
 
 declare module '@glint/environment-ember-loose/registry' {

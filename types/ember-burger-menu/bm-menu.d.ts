@@ -1,7 +1,7 @@
 import { BmMenuItemComponent } from '@gavant/glint-template-types/types/ember-burger-menu/bm-menu-item';
 import { BurgerMenuState } from '@gavant/glint-template-types/types/ember-burger-menu/burger-menu';
 import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
-import Component, { ArgsFor } from '@glint/environment-ember-loose/ember-component';
+import Component from '@glint/environment-ember-loose/ember-component';
 
 export interface BmMenuComponentSignature {
     Args: {
@@ -22,7 +22,6 @@ export interface BmMenuComponentSignature {
     };
 }
 
-export interface BmMenuComponent extends ArgsFor<BmMenuComponentSignature> {}
 export declare class BmMenuComponent extends Component<BmMenuComponentSignature> {}
 
 declare module '@glint/environment-ember-loose/registry' {

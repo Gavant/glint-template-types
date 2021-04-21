@@ -1,7 +1,7 @@
 import { BmMenuComponent } from '@gavant/glint-template-types/types/ember-burger-menu/bm-menu';
 import { BmOutletComponent } from '@gavant/glint-template-types/types/ember-burger-menu/bm-outlet';
 import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
-import Component, { ArgsFor } from '@glint/environment-ember-loose/ember-component';
+import Component from '@glint/environment-ember-loose/ember-component';
 
 export type BurgerMenuAnimation =
     | 'slide'
@@ -62,7 +62,6 @@ export interface BurgerMenuComponentSignature {
     };
 }
 
-export interface BurgerMenuComponent extends ArgsFor<BurgerMenuComponentSignature> {}
 export declare class BurgerMenuComponent extends Component<BurgerMenuComponentSignature> {}
 
 declare module '@glint/environment-ember-loose/registry' {

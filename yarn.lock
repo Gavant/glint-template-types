@@ -1437,6 +1437,14 @@
     "@types/ember__object" "*"
     "@types/ember__routing" "*"
 
+"@types/ember__array@*", "@types/ember__array@^3.16.4":
+  version "3.16.4"
+  resolved "https://registry.yarnpkg.com/@types/ember__array/-/ember__array-3.16.4.tgz#d61b5b876e4976de03aa027ea89cb48cd640d49d"
+  integrity sha512-K21LKDNDW3ug0fLsFUTHZPyaFnzUUZEOtsmzmmeXKI6apJcoaz/yF3V0fvM2FUWNLs6rXB3PXegtzik6lq44Yw==
+  dependencies:
+    "@types/ember__array" "*"
+    "@types/ember__object" "*"
+
 "@types/ember__component@*", "@types/ember__component@^3.16.4":
   version "3.16.4"
   resolved "https://registry.yarnpkg.com/@types/ember__component/-/ember__component-3.16.4.tgz#545b35d8aa861eb4753e26b6a2cbde43d8524f89"
