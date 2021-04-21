@@ -62,10 +62,5 @@ export interface BurgerMenuComponentSignature {
     };
 }
 
-export declare class BurgerMenuComponent extends Component<BurgerMenuComponentSignature> {}
-
-declare module '@glint/environment-ember-loose/registry' {
-    export default interface Registry {
-        BurgerMenu: typeof BurgerMenuComponent;
-    }
-}
+export class BurgerMenuComponent extends Component<BurgerMenuComponentSignature> {}
+export default BurgerMenuComponent;

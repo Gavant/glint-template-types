@@ -22,10 +22,5 @@ export interface BmMenuComponentSignature {
     };
 }
 
-export declare class BmMenuComponent extends Component<BmMenuComponentSignature> {}
-
-declare module '@glint/environment-ember-loose/registry' {
-    export default interface Registry {
-        BmMenu: typeof BmMenuComponent;
-    }
-}
+export class BmMenuComponent extends Component<BmMenuComponentSignature> {}
+export default BmMenuComponent;

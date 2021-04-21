@@ -8,10 +8,5 @@ export interface BmOutletComponentSignature {
     };
 }
 
-export declare class BmOutletComponent extends Component<BmOutletComponentSignature> {}
-
-declare module '@glint/environment-ember-loose/registry' {
-    export default interface Registry {
-        BmOutlet: typeof BmOutletComponent;
-    }
-}
+export class BmOutletComponent extends Component<BmOutletComponentSignature> {}
+export default BmOutletComponent;
