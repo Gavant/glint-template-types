@@ -1,4 +1,5 @@
 import { ComponentSignature } from "@glint/environment-ember-loose";
+import { htmlSafe } from '@ember/template';
 
 /**
  * Workaround for https://discord.com/channels/480462759797063690/484421406659182603/827512106696966154
@@ -35,3 +36,5 @@ export type SignatureWithPositionedArg<S extends ComponentSignature, K extends k
   PositionalArgs: [S['Args'][K]],
   Yields: S['Yields']
 };
+
+export type SafeString = ReturnType<typeof htmlSafe>;
