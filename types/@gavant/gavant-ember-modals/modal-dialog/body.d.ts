@@ -4,3 +4,4 @@ import { BaseGlimmerSignature } from '@gavant/glint-template-types/utils/types';
 
 interface ModalDialogBodyArgs {}
 export class ModalDialogBodyComponent extends Component<BaseGlimmerSignature<ModalDialogBodyArgs>> {}
+export default ModalDialogBodyComponent;

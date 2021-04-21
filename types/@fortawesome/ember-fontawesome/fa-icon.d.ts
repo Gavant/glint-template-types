@@ -1,4 +1,4 @@
-import Component, { ArgsFor } from '@glint/environment-ember-loose/ember-component';
+import Component from '@glint/environment-ember-loose/ember-component';
 
 import {
     FlipProp, IconName, IconPrefix, PullProp, RotateProp, SizeProp, Transform
@@ -21,5 +21,5 @@ export interface FaIconComponentSignature {
     };
 }
 
-export interface FaIconComponent extends ArgsFor<FaIconComponentSignature> {}
-export declare class FaIconComponent extends Component<FaIconComponentSignature> {}
+export class FaIconComponent extends Component<FaIconComponentSignature> {}
+export default FaIconComponent;

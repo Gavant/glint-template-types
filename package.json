@@ -9,7 +9,6 @@
     "author": "Gavant",
     "license": "MIT",
     "keywords": [],
-    "types": "index.d.ts",
     "dependencies": {},
     "devDependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.35",

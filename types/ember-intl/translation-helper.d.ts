@@ -1,6 +1,6 @@
 import Helper from '@glint/environment-ember-loose/ember-component/helper';
 
-declare class TranslationHelper extends Helper<{
+export class TranslationHelper extends Helper<{
     PositionalArgs: [string];
     NamedArgs: {
         [key: string]: any;
@@ -8,3 +8,4 @@ declare class TranslationHelper extends Helper<{
     };
     Return: string;
 }> {}
+export default TranslationHelper;

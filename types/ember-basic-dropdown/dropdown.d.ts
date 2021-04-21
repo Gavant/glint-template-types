@@ -56,4 +56,5 @@ interface DropdownYields {
     };
 }
 
-export declare class Dropdown extends Component<ModifyYields<BaseGlimmerSignature<DropdownArgs>, DropdownYields>> {}
+export class Dropdown extends Component<ModifyYields<BaseGlimmerSignature<DropdownArgs>, DropdownYields>> {}
+export default Dropdown;
