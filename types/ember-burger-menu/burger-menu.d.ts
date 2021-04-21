@@ -1,5 +1,5 @@
-import { BmMenuComponent } from '@gavant/glint-template-types/types/ember-burger-menu/bm-menu';
-import { BmOutletComponent } from '@gavant/glint-template-types/types/ember-burger-menu/bm-outlet';
+import BmMenuComponent from '@gavant/glint-template-types/types/ember-burger-menu/bm-menu';
+import BmOutletComponent from '@gavant/glint-template-types/types/ember-burger-menu/bm-outlet';
 import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
 import Component from '@glint/environment-ember-loose/ember-component';
 
@@ -62,5 +62,4 @@ export interface BurgerMenuComponentSignature {
     };
 }
 
-export class BurgerMenuComponent extends Component<BurgerMenuComponentSignature> {}
-export default BurgerMenuComponent;
+export default class BurgerMenuComponent extends Component<BurgerMenuComponentSignature> {}

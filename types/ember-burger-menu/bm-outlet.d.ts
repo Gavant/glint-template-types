@@ -8,5 +8,4 @@ export interface BmOutletComponentSignature {
     };
 }
 
-export class BmOutletComponent extends Component<BmOutletComponentSignature> {}
-export default BmOutletComponent;
+export default class BmOutletComponent extends Component<BmOutletComponentSignature> {}

@@ -1,4 +1,4 @@
-import { BmMenuItemComponent } from '@gavant/glint-template-types/types/ember-burger-menu/bm-menu-item';
+import BmMenuItemComponent from '@gavant/glint-template-types/types/ember-burger-menu/bm-menu-item';
 import { BurgerMenuState } from '@gavant/glint-template-types/types/ember-burger-menu/burger-menu';
 import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
 import Component from '@glint/environment-ember-loose/ember-component';
@@ -22,5 +22,4 @@ export interface BmMenuComponentSignature {
     };
 }
 
-export class BmMenuComponent extends Component<BmMenuComponentSignature> {}
-export default BmMenuComponent;
+export default class BmMenuComponent extends Component<BmMenuComponentSignature> {}

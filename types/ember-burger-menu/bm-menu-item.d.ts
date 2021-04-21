@@ -11,5 +11,4 @@ export interface BmMenuItemComponentSignature {
     };
 }
 
-export class BmMenuItemComponent extends Component<BmMenuItemComponentSignature> {}
-export default BmMenuItemComponent;
+export default class BmMenuItemComponent extends Component<BmMenuItemComponentSignature> {}
