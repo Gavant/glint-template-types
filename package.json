@@ -15,6 +15,8 @@
         "@gavant/ember-bootstrap-dropdown": "^1.0.4",
         "@gavant/ember-button-basic": "^1.0.1",
         "@gavant/ember-button-spinner": "^1.0.1",
+        "@gavant/ember-floating-labels": "^1.1.0",
+        "@gavant/ember-validations": "^2.1.2",
         "@glint/core": "^0.5.1",
         "@glint/environment-ember-loose": "^0.5.1",
         "@types/ember__application": "^3.16.2",
