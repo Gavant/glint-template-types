@@ -20,14 +20,14 @@ interface GavantModalDialogArgs extends ModalDialogArgs {
      * @type {('xs' | 'sm' | 'md' | 'lg' | 'xl')}
      * @memberof GavantModalDialogArgs
      */
-    size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     /**
      * Tells us whether the modal can be closed
      *
      * @type {boolean}
      * @memberof GavantModalDialogArgs
      */
-    closable: boolean;
+    closable?: boolean;
 }
 
 interface ModalDialogYields {
