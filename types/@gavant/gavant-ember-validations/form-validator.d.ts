@@ -1,16 +1,16 @@
 import FormValidator from '@gavant/ember-validations/components/form-validator';
 import FormValidatorChildComponent from '@gavant/ember-validations/components/form-validator/child';
-import { InputValidatorComponent } from '@gavant/ember-validations/input-validator';
 import { GenericChangeset } from '@gavant/ember-validations/utilities/create-changeset';
-import { ArgsFor } from '@glint/environment-ember-loose/ember-component';
+import InputValidatorComponent from '@gavant/glint-template-types/types/@gavant/gavant-ember-validations/input-validator';
+import Component from '@glint/environment-ember-loose/glimmer-component';
 
-export interface FormValidatorSignature {
+export interface FormValidatorSignature<T> {
     Args: {
         changeset: GenericChangeset<any>;
     };
     Yields: {
         default: [
-            GenericChangeset<any>,
+            GenericChangeset<T>,
             {
                 submit: FormValidator['submitForm'];
                 input: typeof InputValidatorComponent;
@@ -20,7 +20,4 @@ export interface FormValidatorSignature {
     };
 }
 
-export interface FormValidatorComponent extends ArgsFor<FormValidatorSignature> {}
-export declare class FormValidatorComponent extends FormValidator {
-    changeset: GenericChangeset<any>;
-}
+export default class FormValidatorComponent<T> extends Component<FormValidatorSignature<T>> {}

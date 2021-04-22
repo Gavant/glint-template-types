@@ -8,7 +8,7 @@ interface FlTextareaYields {
     };
 }
 
-import { FlTextareaArgs } from '@gavant/ember-floating-labels/components/fl-textarea';
+import { FlTextareaArgs } from '@gavant/ember-floating-labels/addon/components/fl-textarea';
 export default class FlTextareaComponent extends Component<
     ModifyYields<BaseGlimmerSignature<FlTextareaArgs>, FlTextareaYields>
 > {}

@@ -8,7 +8,7 @@ interface FlSelectYields {
     };
 }
 
-import { FlSelectArgs } from '@gavant/ember-floating-labels/components/fl-select';
+import { FlSelectArgs } from '@gavant/ember-floating-labels/addon/components/fl-select';
 export default class FlSelectComponent extends Component<
     ModifyYields<BaseGlimmerSignature<FlSelectArgs>, FlSelectYields>
 > {}
