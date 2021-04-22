@@ -21,5 +21,5 @@ export interface FaIconComponentSignature {
     };
 }
 
-export class FaIconComponent extends Component<FaIconComponentSignature> {}
-export default FaIconComponent;
+export class FaIcon extends Component<FaIconComponentSignature> {}
+export default FaIcon;

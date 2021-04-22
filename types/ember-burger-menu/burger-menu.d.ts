@@ -1,7 +1,8 @@
-import BmMenuComponent from '@gavant/glint-template-types/types/ember-burger-menu/bm-menu';
-import BmOutletComponent from '@gavant/glint-template-types/types/ember-burger-menu/bm-outlet';
 import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
 import Component from '@glint/environment-ember-loose/ember-component';
+
+import BmMenu from '@gavant/glint-template-types/types/ember-burger-menu/bm-menu';
+import BmOutlet from '@gavant/glint-template-types/types/ember-burger-menu/bm-outlet';
 
 export type BurgerMenuAnimation =
     | 'slide'
@@ -54,12 +55,12 @@ export interface BurgerMenuComponentSignature {
     Yields: {
         default: [
             {
-                outlet: ComponentWithBoundArgs<typeof BmOutletComponent, 'state' | 'containerId'>;
-                menu: ComponentWithBoundArgs<typeof BmMenuComponent, 'state' | 'containerId'>;
+                outlet: ComponentWithBoundArgs<typeof BmOutlet, 'state' | 'containerId'>;
+                menu: ComponentWithBoundArgs<typeof BmMenu, 'state' | 'containerId'>;
                 state: BurgerMenuState;
             }
         ];
     };
 }
 
-export default class BurgerMenuComponent extends Component<BurgerMenuComponentSignature> {}
+export default class BurgerMenu extends Component<BurgerMenuComponentSignature> {}
