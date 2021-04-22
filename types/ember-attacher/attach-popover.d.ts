@@ -2,6 +2,8 @@ import Component from "@glint/environment-ember-loose/ember-component";
 
 interface AttachPopoverSignature {
   Args: {
+    id?: string;
+
     /**
      * The animation used to present the animation.
      * Options: ['fade', 'fill', 'none', 'perspective', 'scale', 'shift']
