@@ -1204,6 +1204,16 @@
     ember-cli-htmlbars "^4.2.3"
     ember-cli-typescript "^3.1.3"
 
+"@gavant/ember-floating-labels@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@gavant/ember-floating-labels/-/ember-floating-labels-1.1.0.tgz#dd4e3aaddbbc233884ca224c72634d71eebc932f"
+  integrity sha512-7Xdq6sTPGKIzxOEydBhyeYRf97fJ8gdRoJ8izni02MZIWkzTG9gc9R91cuZFHZzJnnT5Z9QsuXve2WMKQcEpZw==
+  dependencies:
+    ember-cli-babel "^7.18.0"
+    ember-cli-htmlbars "^4.2.3"
+    ember-cli-typescript "^4.1.0"
+    ember-truth-helpers "^2.1.0"
+
 "@glimmer/component@^1.0.0", "@glimmer/component@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@glimmer/component/-/component-1.0.4.tgz#1c85a5181615a6647f6acfaaed68e28ad7e9626e"
@@ -4686,7 +4696,7 @@ ember-style-modifier@^0.6.0:
     ember-cli-babel "^7.21.0"
     ember-modifier "^2.1.0"
 
-ember-truth-helpers@2.1.0:
+ember-truth-helpers@2.1.0, ember-truth-helpers@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/ember-truth-helpers/-/ember-truth-helpers-2.1.0.tgz#d4dab4eee7945aa2388126485977baeb33ca0798"
   integrity sha512-BQlU8aTNl1XHKTYZ243r66yqtR9JU7XKWQcmMA+vkqfkE/c9WWQ9hQZM8YABihCmbyxzzZsngvldokmeX5GhAw==
