@@ -8,12 +8,14 @@ export interface FormValidatorChildSignature<T> {
         parent: typeof FormValidatorComponent;
         changeset: GenericChangeset<T>;
     };
-    Yields: [
-        changeset: GenericChangeset<T>,
-        childValidator: {
-            input: typeof InputValidatorComponent;
-        }
-    ];
+    Yields: {
+        default: [
+            changeset: GenericChangeset<T>,
+            childValidator: {
+                input: typeof InputValidatorComponent;
+            }
+        ];
+    };
 }
 
-export default class FormValidatorChildComponent<T> extends Component<FormValidatorChildSignature<T>> {}
+export default class FormValidatorChild<T> extends Component<FormValidatorChildSignature<T>> {}

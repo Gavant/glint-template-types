@@ -4,11 +4,9 @@ import { BaseGlimmerSignature, ModifyYields } from '@gavant/glint-template-types
 
 interface FlInputYields {
     Yields: {
-        default: any;
+        default?: [];
     };
 }
 
 import { FlInputArgs } from '@gavant/ember-floating-labels/addon/components/fl-input';
-export default class FlInputComponent extends Component<
-    ModifyYields<BaseGlimmerSignature<FlInputArgs>, FlInputYields>
-> {}
+export default class FlInput extends Component<ModifyYields<BaseGlimmerSignature<FlInputArgs>, FlInputYields>> {}

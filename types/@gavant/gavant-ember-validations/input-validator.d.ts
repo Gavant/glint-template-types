@@ -1,14 +1,14 @@
-import FormValidatorComponent from '@gavant/glint-template-types/types/@gavant/gavant-ember-validations/form-validator';
+import FormValidator from '@gavant/glint-template-types/types/@gavant/gavant-ember-validations/form-validator';
 import Component from '@glint/environment-ember-loose/ember-component';
 
 export interface InputValidatorSignature {
     Args: {
-        errors: string | string[];
-        parent: typeof FormValidatorComponent;
+        errors: string[];
+        parent: typeof FormValidator;
     };
     Yields: {
-        default: any;
+        default?: [];
     };
 }
 
-export default class InputValidatorComponent extends Component<InputValidatorSignature> {}
+export default class InputValidator extends Component<InputValidatorSignature> {}

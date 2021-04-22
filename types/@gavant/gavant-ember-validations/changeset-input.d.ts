@@ -8,4 +8,4 @@ export interface ChangesetInputSignature<T> {
     };
 }
 
-export default class ChangesetInputComponent<T> extends Component<ChangesetInputSignature<T>> {}
+export default class ChangesetInput<T> extends Component<ChangesetInputSignature<T>> {}

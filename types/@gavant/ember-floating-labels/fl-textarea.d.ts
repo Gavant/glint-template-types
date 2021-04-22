@@ -4,11 +4,11 @@ import { BaseGlimmerSignature, ModifyYields } from '@gavant/glint-template-types
 
 interface FlTextareaYields {
     Yields: {
-        default: [];
+        default?: [];
     };
 }
 
 import { FlTextareaArgs } from '@gavant/ember-floating-labels/addon/components/fl-textarea';
-export default class FlTextareaComponent extends Component<
+export default class FlTextarea extends Component<
     ModifyYields<BaseGlimmerSignature<FlTextareaArgs>, FlTextareaYields>
 > {}

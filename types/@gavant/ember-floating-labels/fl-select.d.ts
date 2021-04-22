@@ -4,11 +4,9 @@ import { BaseGlimmerSignature, ModifyYields } from '@gavant/glint-template-types
 
 interface FlSelectYields {
     Yields: {
-        default: [select: typeof FlSelectComponent];
+        default?: [select: typeof FlSelect];
     };
 }
 
 import { FlSelectArgs } from '@gavant/ember-floating-labels/addon/components/fl-select';
-export default class FlSelectComponent extends Component<
-    ModifyYields<BaseGlimmerSignature<FlSelectArgs>, FlSelectYields>
-> {}
+export default class FlSelect extends Component<ModifyYields<BaseGlimmerSignature<FlSelectArgs>, FlSelectYields>> {}
