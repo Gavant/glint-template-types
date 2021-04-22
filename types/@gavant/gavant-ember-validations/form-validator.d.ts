@@ -8,6 +8,7 @@ import Component from '@glint/environment-ember-loose/ember-component';
 export interface FormValidatorSignature<T> {
     Args: {
         changeset: GenericChangeset<T>;
+        submit: (changeset?: GenericChangeset<T>, childChangesets?: GenericChangeset<any>) => any;
     };
     Yields: {
         default: [
