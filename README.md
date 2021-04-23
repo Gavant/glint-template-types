@@ -1,3 +1,5 @@
+# glint-template-types
+
 This package contains types that are needed by glint (temporarily).
 
 In order to use this, you must import the types from this package, and manually add them to the glint registry
