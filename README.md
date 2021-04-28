@@ -2,6 +2,12 @@
 
 This package contains types that are needed by glint (temporarily).
 
+# Installation
+
+`yarn add -D @gavant/glint-template-types`
+
+# Use
+
 In order to use this, you must import the types from this package, and manually add them to the glint registry
 
 ```
