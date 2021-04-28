@@ -1,6 +1,8 @@
+import { ElementForTagName } from "@glint/environment-ember-loose/-private/dsl";
 import Component from "@glint/environment-ember-loose/ember-component";
 
-interface AnimatedContainerSignature {
+interface AnimatedContainerSignature<TagName extends string> {
+  Element: ElementForTagName<TagName>,
   Args: {
     motion?: string;
 
@@ -8,11 +10,11 @@ interface AnimatedContainerSignature {
     onInitialRender?: boolean
 
     /** Use a custom tag for the container. Defaults to div. */
-    tag?: String
+    tag?: TagName
   };
   Yields: {
     default: [];
   };
 }
 
-export default class AnimatedContainer extends Component<AnimatedContainerSignature> {}
+export default class AnimatedContainer<TagName extends string> extends Component<AnimatedContainerSignature<TagName>> {}
