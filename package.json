@@ -1,6 +1,6 @@
 {
     "name": "@gavant/glint-template-types",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "Template types for ember/glimmer glint",
     "scripts": {
         "test": "tsc"
