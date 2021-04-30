@@ -1,11 +1,13 @@
+import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
+import Component from '@glint/environment-ember-loose/ember-component';
+
 import FormValidatorComponent from '@gavant/ember-validations/components/form-validator';
 import { GenericChangeset } from '@gavant/ember-validations/utilities/create-changeset';
 import FormValidatorChild from '@gavant/glint-template-types/types/@gavant/gavant-ember-validations/form-validator/child';
 import InputValidator from '@gavant/glint-template-types/types/@gavant/gavant-ember-validations/input-validator';
-import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
-import Component from '@glint/environment-ember-loose/ember-component';
 
 export interface FormValidatorSignature<T> {
+    element: HTMLFormElement;
     Args: {
         changeset: GenericChangeset<T>;
         submit: (changeset?: GenericChangeset<T>, childChangesets?: GenericChangeset<unknown>[]) => any;
