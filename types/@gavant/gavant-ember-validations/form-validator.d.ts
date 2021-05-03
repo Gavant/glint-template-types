@@ -7,7 +7,7 @@ import FormValidatorChild from '@gavant/glint-template-types/types/@gavant/gavan
 import InputValidator from '@gavant/glint-template-types/types/@gavant/gavant-ember-validations/input-validator';
 
 export interface FormValidatorSignature<T> {
-    element: HTMLFormElement;
+    Element: HTMLFormElement;
     Args: {
         changeset: GenericChangeset<T>;
         submit: (changeset?: GenericChangeset<T>, childChangesets?: GenericChangeset<unknown>[]) => any;
