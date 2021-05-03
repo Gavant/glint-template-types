@@ -5,7 +5,7 @@ import FormValidator from '@gavant/glint-template-types/types/@gavant/gavant-emb
 import { ValidationErr } from 'validated-changeset/dist/types';
 
 export interface InputValidatorSignature {
-    element: HTMLElement;
+    Element: HTMLElement;
     Args: {
         errors: string | string[] | ValidationErr[];
         parent: typeof FormValidator;
