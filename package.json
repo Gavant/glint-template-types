@@ -16,7 +16,7 @@
         "@gavant/ember-button-basic": "^1.0.1",
         "@gavant/ember-button-spinner": "^1.0.1",
         "@gavant/ember-floating-labels": "^1.1.0",
-        "@gavant/ember-table": "^0.7.0",
+        "@gavant/ember-table": "^1.0.0",
         "@gavant/ember-validations": "^2.1.3",
         "@glint/core": "^0.5.1",
         "@glint/environment-ember-loose": "^0.5.1",
