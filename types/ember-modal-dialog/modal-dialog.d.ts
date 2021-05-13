@@ -151,6 +151,20 @@ export interface ModalDialogArgs {
      * @memberof ModalDialogArgs
      */
     wrapperClassNames?: string;
+    /**
+     * Can be used to control what element acts as an aria label for this modal
+     *
+     * @type {string}
+     * @memberof ModalDialogArgs
+     */
+     'aria-labelledby'?: string;
+    /**
+     * Can be used to control what element acts as an aria description for this modal
+     *
+     * @type {string}
+     * @memberof ModalDialogArgs
+     */
+     'aria-describedby'?: string;
 }
 
 export class ModalDialog extends Component<BaseGlimmerSignature<ModalDialogArgs>> {}
