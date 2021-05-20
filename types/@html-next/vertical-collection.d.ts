@@ -26,7 +26,7 @@ export interface VerticalCollectionSignature<T> {
     Element: HTMLElement;
     Args: VerticalCollectionArgs<T>;
     Yields: {
-        default: [T];
+        default: [T, number];
         else: [];
     };
 }
