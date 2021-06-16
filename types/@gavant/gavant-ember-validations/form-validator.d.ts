@@ -6,6 +6,12 @@ import { GenericChangeset } from '@gavant/ember-validations/utilities/create-cha
 import FormValidatorChild from '@gavant/glint-template-types/types/@gavant/gavant-ember-validations/form-validator/child';
 import InputValidator from '@gavant/glint-template-types/types/@gavant/gavant-ember-validations/input-validator';
 
+export interface FormValidatorYield {
+    submit: FormValidatorComponent['submitForm'];
+    input: ComponentWithBoundArgs<typeof InputValidator, 'parent'>;
+    child: ComponentWithBoundArgs<typeof FormValidatorChild, 'parent'>;
+}
+
 export interface FormValidatorSignature<T> {
     Element: HTMLFormElement;
     Args: {
@@ -13,14 +19,7 @@ export interface FormValidatorSignature<T> {
         submit: (changeset?: GenericChangeset<T>, childChangesets?: GenericChangeset<unknown>[]) => any;
     };
     Yields: {
-        default: [
-            GenericChangeset<T>,
-            {
-                submit: FormValidatorComponent['submitForm'];
-                input: ComponentWithBoundArgs<typeof InputValidator, 'parent'>;
-                child: ComponentWithBoundArgs<typeof FormValidatorChild, 'parent'>;
-            }
-        ];
+        default: [GenericChangeset<T>, FormValidatorYield];
     };
 }
 
