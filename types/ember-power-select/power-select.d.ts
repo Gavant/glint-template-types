@@ -66,7 +66,7 @@ export interface PowerSelectArgs<T> {
     ariaLabelledBy?: string;
     beforeOptionsComponent?: string | null;
     initiallyOpened?: boolean;
-    buildSelection?: (lastSelection: unknown, select: Select) => unknown | null;
+    buildSelection?: (lastSelection: T, select: Select) => T | null;
     calculatePosition?: (
         trigger: HTMLElement,
         content: HTMLElement,
@@ -79,22 +79,22 @@ export interface PowerSelectArgs<T> {
     };
     class?: string;
     closeOnSelect?: boolean;
-    defaultHighlighted?: unknown;
+    defaultHighlighted?: T | ((select: Select) => T);
     destination?: string;
     disabled?: boolean;
     dropdownClass?: string;
-    extra?: Record<string, unknown>;
+    extra?: Record<string, T>;
     groupComponent?: string;
     highlightOnHover?: boolean;
     horizontalPosition?: HorizontalPositions;
     intiallyOpened?: boolean;
     loadingMessage?: string;
     eventType?: string;
-    matcher?: (option: unknown, searchTerm: string) => boolean;
+    matcher?: (option: T, searchTerm: string) => boolean;
     matchTriggerWidth?: boolean;
     noMatchesMessage?: string;
     onBlur?: (select: Select, event: FocusEvent) => void;
-    onChange?: (selection: unknown, select: Selection, event?: Event) => void;
+    onChange?: (selection: T, select: Selection, event?: Event) => void;
     onClose?: (select: Select, e: Event) => boolean | undefined;
     onFocus?: (select: Select, event: FocusEvent) => void;
     onInput?: (term: string, select: Select, e: Event) => string | false | void;
@@ -107,20 +107,20 @@ export interface PowerSelectArgs<T> {
     preventScroll?: boolean;
     registerAPI?: (select: Select) => void;
     renderInPlace?: boolean;
-    scrollTo?: (option: unknown, select: Select) => void;
-    search?: (term: string, select: Select) => any[] | Promise<unknown[]>;
+    scrollTo?: (option: T, select: Select) => void;
+    search?: (term: string, select: Select) => T[] | Promise<T[]>;
     searchEnabled?: boolean;
     searchField?: string;
     searchMessage?: string | boolean;
     searchPlaceholder?: string;
-    selected?: any | any[];
+    selected?: T | T[];
     selectedItemComponent?: string;
     tabindex?: string;
     triggerClass?: string;
     triggerComponent?: string;
     triggerId?: string;
     triggerRole?: string;
-    typeAheadMatcher?: (option: unknown, searchTerm: string) => boolean;
+    typeAheadMatcher?: (option: T, searchTerm: string) => boolean;
     verticalPosition?: VerticalPositions;
     loadingComponent?: string;
 }

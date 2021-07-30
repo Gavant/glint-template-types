@@ -1,42 +1,30 @@
 import Component from '@glint/environment-ember-loose/glimmer-component';
 import { Select } from 'ember-power-select/addon/components/power-select';
 
-export interface PowerSelectOptionsArgs {
+export interface PowerSelectOptionsArgs<T> {
     select: Select;
     loadingMessage?: string;
     groupComponent?: string;
     optionsComponent?: string;
-    items: any[];
+    items: T[];
     extra: {
-        estimateHeight: number;
-        staticHeight?: number;
-        bufferSize: number;
-        onLastReached(): any;
-        isSearching?: boolean;
-        isLoadingMore?: boolean;
-        triggerIsSearch?: boolean;
-        noMatchesMessage?: string;
-        hasInvokedSearch?: boolean;
-        searchText?: string;
-        clearSearch?: () => void;
-        clearOptions?: () => any;
-        options: any[];
+        [x: string]: any;
     };
     highlightOnHover?: boolean;
     optionsClass?: string;
-    options: any[];
+    options: T[];
     groupIndex?: string;
 }
 
-export interface PowerSelectOptionsSignature {
-    Args: PowerSelectOptionsArgs;
+export interface PowerSelectOptionsSignature<T> {
+    Args: PowerSelectOptionsArgs<T>;
     Yields: {
-        default?: [any, Select];
+        default?: [T, Select];
     };
     Element: HTMLUListElement;
 }
 
-export class PowerSelectOptions extends Component<PowerSelectOptionsSignature> {
+export class PowerSelectOptions<T> extends Component<PowerSelectOptionsSignature<T>> {
     isTouchDevice: boolean;
     hasMoved: boolean;
     addHandlers(element: Element): void;

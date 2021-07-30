@@ -1,30 +1,17 @@
 import Component from '@glint/environment-ember-loose/glimmer-component';
 import { Select } from 'ember-power-select/addon/components/power-select';
 
-export interface PowerSelectTriggerArgs {
+export interface PowerSelectTriggerArgs<T> {
     select: Select;
     placeholder?: string;
     searchField?: string;
     onInput?: (e: InputEvent) => boolean;
     onKeydown?: (e: KeyboardEvent) => boolean;
-    buildSelection: (lastSelection: any, select: Select) => any[];
+    buildSelection: (lastSelection: T, select: Select) => T[];
     listBoxId: number;
-    isLoading?: boolean;
     onBlur?(): void;
     extra: {
-        estimateHeight: number;
-        staticHeight?: number;
-        bufferSize: number;
-        onLastReached(): any;
-        isSearching?: boolean;
-        isLoadingMore?: boolean;
-        triggerIsSearch?: boolean;
-        noMatchesMessage?: string;
-        hasInvokedSearch?: boolean;
-        searchText?: string;
-        clearSearch?: () => void;
-        clearOptions?: () => any;
-        options: any[];
+        [x: string]: any;
     };
     allowClear?: boolean;
     selectedItemComponent?: string;
@@ -32,15 +19,15 @@ export interface PowerSelectTriggerArgs {
     tabindex?: string;
 }
 
-export interface PowerSelectTriggerSignature {
-    Args: PowerSelectTriggerArgs;
+export interface PowerSelectTriggerSignature<T> {
+    Args: PowerSelectTriggerArgs<T>;
     Yields: {
-        default?: [any, Select];
+        default?: [T, Select];
     };
     Element: HTMLUListElement;
 }
 
-export class PowerSelectTrigger extends Component<PowerSelectTriggerSignature> {
+export class PowerSelectTrigger<T> extends Component<PowerSelectTriggerSignature<T>> {
     inputFont?: string;
     readonly triggerMultipleInputStyle: string;
     readonly maybePlaceholder: string;
