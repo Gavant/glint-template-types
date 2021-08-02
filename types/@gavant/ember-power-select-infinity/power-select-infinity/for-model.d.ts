@@ -52,6 +52,11 @@ export interface PowerSelectInfinityForModelArgs<T> extends PowerSelectInfinityA
      * @type {boolean}
      */
     loadOptionsOnRender?: boolean;
+    /**
+     * A string array for requesting included models when using
+     * JSON api
+     * @type {string[]}
+     */
     include?: string[];
 }
 

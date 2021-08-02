@@ -15,15 +15,15 @@ export interface PowerSelectAPI<T> {
     selected: T | T[];
     uniqueId: string;
     actions: {
-        choose(option: T): void;
-        close(): void;
-        highlight(option: T): void;
-        open(): void;
-        reposition(): void;
-        scrollTo(option: T): void;
-        search(term: string): void;
-        select(option: T | null): void;
-        toggle(): void;
+        choose: (option: T) => void;
+        close: () => void;
+        highlight: (option: T) => void;
+        open: () => void;
+        reposition: () => void;
+        scrollTo: (option: T) => void;
+        search: (term: string) => void;
+        select: (option: T | null) => void;
+        toggle: () => void;
     };
 }
 
@@ -100,7 +100,7 @@ export interface PowerSelectArgs<T> {
     onInput?: (term: string, select: Select, e: Event) => string | false | void;
     onKeydown?: (select: Select, e: KeyboardEvent) => boolean | undefined;
     onOpen?: (select: Select, e: Event) => boolean | undefined;
-    options: (T | Record<string, unknown>)[];
+    options: T[];
     optionsComponent?: string;
     placeholder?: string;
     placeholderComponent?: string;
