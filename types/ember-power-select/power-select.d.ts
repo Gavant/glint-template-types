@@ -12,7 +12,7 @@ export interface PowerSelectAPI<T> {
     results: T[];
     resultsCount: number;
     searchText: string;
-    selected: T | T[];
+    selected: T;
     uniqueId: string;
     actions: {
         choose: (option: T) => void;
