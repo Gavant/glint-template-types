@@ -95,11 +95,11 @@ export interface PowerSelectArgs<T> {
     noMatchesMessage?: string;
     onBlur?: (select: Select, event: FocusEvent) => void;
     onChange?: (selection: T, select: Selection, event?: Event) => void;
-    onClose?: (select: Select, e: Event) => boolean | undefined;
+    onClose?: (select: Select, e: Event) => boolean | void;
     onFocus?: (select: Select, event: FocusEvent) => void;
     onInput?: (term: string, select: Select, e: Event) => string | false | void;
-    onKeydown?: (select: Select, e: KeyboardEvent) => boolean | undefined;
-    onOpen?: (select: Select, e: Event) => boolean | undefined;
+    onKeydown?: (select: Select, e: KeyboardEvent) => boolean | void;
+    onOpen?: (select: Select, e: Event) => boolean | void;
     options: T[];
     optionsComponent?: string;
     placeholder?: string;
