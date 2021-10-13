@@ -35,6 +35,7 @@
         "ember-concurrency": "^2.0.3",
         "ember-concurrency-async": "^1.0.0",
         "ember-concurrency-ts": "^0.2.2",
+        "ember-power-select": "^4.1.6",
         "expect-type": "^0.11.0",
         "release-it": "^14.6.1",
         "typescript": "^4.2.4",
