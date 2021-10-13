@@ -41,7 +41,7 @@ export interface AnimatedEachArgs<T> {
 export interface AnimatedEachSignature<T> {
   Args: AnimatedEachArgs<T>;
   Yields: {
-    default: [T];
+    default: [T, number];
     else: [];
   };
 }
