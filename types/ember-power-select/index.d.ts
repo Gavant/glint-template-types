@@ -12,18 +12,18 @@ declare module 'ember-power-select/types/power-select-api' {
         height?: string;
     };
     export class PowerSelectAPI<T> {
-        disabled: boolean;
-        highlighted: T;
-        isActive: boolean;
-        isOpen: boolean;
-        lastSearchedText: string;
-        loading: boolean;
-        options: T[];
-        results: T[];
-        resultsCount: number;
-        searchText: string;
-        selected: T;
-        uniqueId: string;
+        readonly disabled: boolean;
+        readonly highlighted: T;
+        readonly isActive: boolean;
+        readonly isOpen: boolean;
+        readonly lastSearchedText: string;
+        readonly loading: boolean;
+        readonly options: T[];
+        readonly results: T[];
+        readonly resultsCount: number;
+        readonly searchText: string;
+        readonly selected: T;
+        readonly uniqueId: string;
         readonly actions: {
             choose(option: T, event: Event): void;
             close(): void;
