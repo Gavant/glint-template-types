@@ -1,47 +1,14 @@
 import Component from '@glint/environment-ember-loose/glimmer-component';
-import { Select } from 'ember-power-select/addon/components/power-select';
+import { PowerSelectArgs as PSArgs } from 'ember-power-select/addon/components/power-select';
+import { PowerSelectAPI } from 'ember-power-select/types/power-select-api';
 
-export interface PowerSelectAPI<T> {
-    disabled: boolean;
-    highlighted: T;
-    isActive: boolean;
-    isOpen: boolean;
-    lastSearchedTexted: string;
-    loading: boolean;
-    options: T[];
-    results: T[];
-    resultsCount: number;
-    searchText: string;
-    selected: T;
-    uniqueId: string;
-    actions: {
-        choose: (option: T) => void;
-        close: () => void;
-        highlight: (option: T) => void;
-        open: () => void;
-        reposition: () => void;
-        scrollTo: (option: T) => void;
-        search: (term: string) => void;
-        select: (option: T | null) => void;
-        toggle: () => void;
-    };
+export interface PromiseProxy<T> extends Promise<T> {
+    content: any;
 }
 
-export interface CalculatePositionOptions {
-    previousHorizontalPosition: HorizontalPositions;
-    horizontalPosition: HorizontalPositions;
-    previousVerticalPosition: VerticalPositions;
-    verticalPosition: VerticalPositions;
-    matchTriggerWidth: boolean;
-    renderInPlace: boolean;
-}
-
-export interface PositionStyle {
-    top?: number;
-    left?: number;
-    right?: number;
-    width?: number;
-}
+type modifiedPSArgs<T> = Omit<PSArgs, 'search'> & {
+    search?: (term: string, select: PowerSelectAPI<T>) => any[] | PromiseProxy<T[]> | Promise<T[]>;
+};
 
 export enum HorizontalPositions {
     LEFT = 'left',
@@ -56,17 +23,61 @@ export enum VerticalPositions {
     AUTO = 'auto'
 }
 
-export interface PowerSelectArgs<T> {
-    afterOptionsComponent?: string;
-    allowClear?: boolean;
-    animationEnabled?: boolean;
+export interface PositionStyle {
+    top?: number;
+    left?: number;
+    right?: number;
+    width?: number;
+}
+
+export interface CalculatePositionOptions {
+    previousHorizontalPosition: HorizontalPositions;
+    horizontalPosition: HorizontalPositions;
+    previousVerticalPosition: VerticalPositions;
+    verticalPosition: VerticalPositions;
+    matchTriggerWidth: boolean;
+    renderInPlace: boolean;
+}
+
+interface PowerSelectArgs<T, E> extends modifiedPSArgs<T> {
     ariaDescribedBy?: string;
     ariaInvalid?: string;
     ariaLabel?: string;
     ariaLabelledBy?: string;
-    beforeOptionsComponent?: string | null;
+    required?: boolean;
+    options: T[] | PromiseProxy<T[]>;
+    selected: T | PromiseProxy<T>;
+    placeholder?: string;
+    placeholderComponent?: string;
+    searchPlaceholder?: string;
+    renderInPlace?: boolean;
+    highlightOnHover?: boolean;
+    disabled?: boolean;
+    loadingMessage?: string;
+    allowClear?: boolean;
+    triggerClass?: string;
+    dropdownClass?: string;
+    triggerRole?: string;
+    title?: string;
+    triggerId?: string;
+    optionsComponent?: string;
+    beforeOptionsComponent?: string;
+    afterOptionsComponent?: string;
+    groupComponent?: string;
+    extra?: E;
+    preventScroll?: boolean;
+    verticalPosition?: VerticalPositions;
+    horizontalPosition?: HorizontalPositions;
+    destination?: string;
     initiallyOpened?: boolean;
-    buildSelection?: (lastSelection: T, select: Select) => T | null;
+    ebdTriggerComponent?: string;
+    ebdContentComponent?: string;
+    triggerComponent?: string;
+    tabindex?: number;
+    eventType?: string;
+    selectedItemComponent?: string;
+    searchEnabled?: boolean;
+    searchField?: string;
     calculatePosition?: (
         trigger: HTMLElement,
         content: HTMLElement,
@@ -77,61 +88,25 @@ export interface PowerSelectArgs<T> {
         verticalPosition: VerticalPositions;
         style: PositionStyle;
     };
-    class?: string;
-    closeOnSelect?: boolean;
-    defaultHighlighted?: T | ((select: Select) => T);
-    destination?: string;
-    disabled?: boolean;
-    dropdownClass?: string;
-    extra?: Record<string, T>;
-    groupComponent?: string;
-    highlightOnHover?: boolean;
-    horizontalPosition?: HorizontalPositions;
-    intiallyOpened?: boolean;
-    loadingMessage?: string;
-    eventType?: string;
-    matcher?: (option: T, searchTerm: string) => boolean;
-    matchTriggerWidth?: boolean;
-    noMatchesMessage?: string;
-    onBlur?: (select: Select, event: FocusEvent) => void;
-    onChange?: (selection: T, select: Selection, event?: Event) => void;
-    onClose?: (select: Select, e: Event) => boolean | void;
-    onFocus?: (select: Select, event: FocusEvent) => void;
-    onInput?: (term: string, select: Select, e: Event) => string | false | void;
-    onKeydown?: (select: Select, e: KeyboardEvent) => boolean | void;
-    onOpen?: (select: Select, e: Event) => boolean | void;
-    options: T[];
-    optionsComponent?: string;
-    placeholder?: string;
-    placeholderComponent?: string;
-    preventScroll?: boolean;
-    registerAPI?: (select: Select) => void;
-    renderInPlace?: boolean;
-    scrollTo?: (option: T, select: Select) => void;
-    search?: (term: string, select: Select) => T[] | Promise<T[]>;
-    searchEnabled?: boolean;
-    searchField?: string;
-    searchMessage?: string | boolean;
-    searchPlaceholder?: string;
-    selected?: T | T[];
-    selectedItemComponent?: string;
-    tabindex?: string;
-    triggerClass?: string;
-    triggerComponent?: string;
-    triggerId?: string;
-    triggerRole?: string;
-    typeAheadMatcher?: (option: T, searchTerm: string) => boolean;
-    verticalPosition?: VerticalPositions;
-    loadingComponent?: string;
+    buildSelection?: (selected: PowerSelectArgs<T, E>['selected'], select: PowerSelectAPI<T>) => any;
+    onChange: (selection: PowerSelectArgs<T, E>['selected'], select: PowerSelectAPI<T>, event?: Event) => void;
+    search?: (term: string, select: PowerSelectAPI<T>) => any[] | PromiseProxy<T[]> | Promise<T[]>;
+    onOpen?: (select: PowerSelectAPI<T>, e: Event) => boolean | undefined;
+    onClose?: (select: PowerSelectAPI<T>, e: Event) => boolean | undefined;
+    onInput?: (term: string, select: PowerSelectAPI<T>, e: Event) => string | false | void;
+    onKeydown?: (select: PowerSelectAPI<T>, e: KeyboardEvent) => boolean | undefined;
+    onFocus?: (select: PowerSelectAPI<T>, event: FocusEvent) => void;
+    onBlur?: (select: PowerSelectAPI<T>, event: FocusEvent) => void;
+    scrollTo?: (option: PowerSelectArgs<T, E>['selected'], select: PowerSelectAPI<T>) => void;
+    registerAPI?: (select: PowerSelectAPI<T>) => void;
 }
 
-export interface PowerSelectSignature<T> {
-    Args: PowerSelectArgs<T>;
-    Yields: {
-        default?: [T, Select];
-    };
+interface PowerSelectSignature<T, E extends Record<string, unknown>> {
     Element: HTMLDivElement;
+    Args: PowerSelectArgs<T, E>;
+    Yields: {
+        default: [T, PowerSelectAPI<T>];
+    };
 }
 
-export class PowerSelect<T> extends Component<PowerSelectSignature<T>> {}
-export default PowerSelect;
+export declare class PowerSelect<T, E extends Record<string, unknown>> extends Component<PowerSelectSignature<T, E>> {}

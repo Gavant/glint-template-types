@@ -3,7 +3,7 @@ import { Select } from 'ember-power-select/addon/components/power-select';
 
 import { PowerSelectInfinityArgs } from '@gavant/glint-template-types/types/@gavant/ember-power-select-infinity/power-select-infinity';
 
-export interface PowerSelectInfinityForModelArgs<T> extends PowerSelectInfinityArgs<T> {
+export interface PowerSelectInfinityForModelArgs<T, E> extends PowerSelectInfinityArgs<T, E> {
     /**
      * An object containing additional query filters.
      *
@@ -60,12 +60,12 @@ export interface PowerSelectInfinityForModelArgs<T> extends PowerSelectInfinityA
     include?: string[];
 }
 
-export interface PowerSelectInfinityForModelSignature<T> {
-    Args: PowerSelectInfinityForModelArgs<T>;
+export interface PowerSelectInfinityForModelSignature<T, E> {
+    Args: PowerSelectInfinityForModelArgs<T, E>;
     Yields: {
         default?: [T, Select];
     };
     Element: HTMLDivElement;
 }
 
-export default class PowerSelectInfinityForModel<T> extends Component<PowerSelectInfinityForModelSignature<T>> {}
+export default class PowerSelectInfinityForModel<T, E> extends Component<PowerSelectInfinityForModelSignature<T, E>> {}
