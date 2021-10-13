@@ -3,7 +3,7 @@ import { Select } from 'ember-power-select/addon/components/power-select';
 
 import { PowerSelectArgs } from '@gavant/glint-template-types/types/ember-power-select/power-select';
 
-export interface PowerSelectInfinityArgs<T> extends PowerSelectArgs<T> {
+export interface PowerSelectInfinityArgs<T, E> extends PowerSelectArgs<T, E> {
     beforeOptionsComponent?: string;
     /**
      * Used by ember-vertical-collection for occlusion rendering.
@@ -123,12 +123,12 @@ export interface PowerSelectInfinityArgs<T> extends PowerSelectArgs<T> {
     searchBelow?: boolean;
 }
 
-export interface PowerSelectInfinitySignature<T> {
-    Args: PowerSelectInfinityArgs<T>;
+export interface PowerSelectInfinitySignature<T, E> {
+    Args: PowerSelectInfinityArgs<T, E>;
     Yields: {
         default?: [T, Select];
     };
     Element: HTMLDivElement;
 }
 
-export default class PowerSelectInfinity<T> extends Component<PowerSelectInfinitySignature<T>> {}
+export default class PowerSelectInfinity<T, E> extends Component<PowerSelectInfinitySignature<T, E>> {}
