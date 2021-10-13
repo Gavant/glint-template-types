@@ -24,7 +24,7 @@ declare module 'ember-power-select/types/power-select-api' {
         searchText: string;
         selected: T;
         uniqueId: string;
-        actions: {
+        readonly actions: {
             choose(option: T, event: Event): void;
             close(): void;
             highlight(option: T): void;

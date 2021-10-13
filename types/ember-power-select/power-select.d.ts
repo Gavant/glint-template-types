@@ -10,6 +10,35 @@ type modifiedPSArgs<T> = Omit<PSArgs, 'search'> & {
     search?: (term: string, select: PowerSelectAPI<T>) => any[] | PromiseProxy<T[]> | Promise<T[]>;
 };
 
+export enum HorizontalPositions {
+    LEFT = 'left',
+    RIGHT = 'right',
+    CENTER = 'center',
+    AUTO = 'auto'
+}
+
+export enum VerticalPositions {
+    ABOVE = 'above',
+    BELOW = 'below',
+    AUTO = 'auto'
+}
+
+export interface PositionStyle {
+    top?: number;
+    left?: number;
+    right?: number;
+    width?: number;
+}
+
+export interface CalculatePositionOptions {
+    previousHorizontalPosition: HorizontalPositions;
+    horizontalPosition: HorizontalPositions;
+    previousVerticalPosition: VerticalPositions;
+    verticalPosition: VerticalPositions;
+    matchTriggerWidth: boolean;
+    renderInPlace: boolean;
+}
+
 interface PowerSelectArgs<T, E> extends modifiedPSArgs<T> {
     ariaDescribedBy?: string;
     ariaInvalid?: string;
@@ -37,8 +66,8 @@ interface PowerSelectArgs<T, E> extends modifiedPSArgs<T> {
     groupComponent?: string;
     extra?: E;
     preventScroll?: boolean;
-    verticalPosition?: 'below' | 'above' | 'auto';
-    horizontalPosition?: string;
+    verticalPosition?: VerticalPositions;
+    horizontalPosition?: HorizontalPositions;
     destination?: string;
     initiallyOpened?: boolean;
     ebdTriggerComponent?: string;
@@ -49,7 +78,16 @@ interface PowerSelectArgs<T, E> extends modifiedPSArgs<T> {
     selectedItemComponent?: string;
     searchEnabled?: boolean;
     searchField?: string;
-    calculatePosition?: () => string;
+    calculatePosition?: (
+        trigger: HTMLElement,
+        content: HTMLElement,
+        destination: HTMLElement,
+        options: CalculatePositionOptions
+    ) => {
+        horizontalPosition: HorizontalPositions;
+        verticalPosition: VerticalPositions;
+        style: PositionStyle;
+    };
     buildSelection?: (selected: PowerSelectArgs<T, E>['selected'], select: PowerSelectAPI<T>) => any;
     onChange: (selection: PowerSelectArgs<T, E>['selected'], select: PowerSelectAPI<T>, event?: Event) => void;
     search?: (term: string, select: PowerSelectAPI<T>) => any[] | PromiseProxy<T[]> | Promise<T[]>;
