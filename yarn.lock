@@ -1336,10 +1336,10 @@
     ember-cli-typescript "^4.1.0"
     ember-truth-helpers "^2.1.0"
 
-"@gavant/ember-table@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@gavant/ember-table/-/ember-table-1.0.2.tgz#b02b30d2023de0c8b81aa2ecbcdbbc1c140676ff"
-  integrity sha512-7PFIKgEMScfH2eP1Ups0Svfz1z8d3aOt6j9k+k3RIs36DS+kH9b/TL7q7QvXZ1sV5sSy7nsHvceTLYFbeEjvOg==
+"@gavant/ember-table@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@gavant/ember-table/-/ember-table-1.0.8.tgz#d6892b41ba2c37ded018ae2552123d666d8aea5d"
+  integrity sha512-N86rDxuvIbzMbj/7oaxEkQE0KX8ZHagTIVpcdOMnSafz2CMNKth+cGce93I1Dzt7lMU8xc8Hy7Yyj0ile9q85w==
   dependencies:
     "@ember/render-modifiers" "^1.0.2"
     "@glimmer/tracking" "^1.0.4"
@@ -1350,7 +1350,7 @@
     ember-cli-typescript "^4.1.0"
     ember-did-resize-modifier "^1.0.0"
     ember-responsive "^3.0.5"
-    ember-table "^3.0.1"
+    ember-table "3.0.2-2"
     ember-truth-helpers "^3.0.0"
     ember-useragent "0.9.1"
 
@@ -5386,10 +5386,10 @@ ember-style-modifier@^0.6.0:
     ember-cli-babel "^7.21.0"
     ember-modifier "^2.1.0"
 
-ember-table@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/ember-table/-/ember-table-3.0.1.tgz#1cca110a7620390df89df29001d16d706aaf3569"
-  integrity sha512-ZcLCC/UzuWkLvkk876GiVb7jWMppx5v8dz/TLS4a5LuCliUm/ZPwWv4mJWRSKcQ6eqBqJ2d9SETpQSdq2bGk6w==
+ember-table@3.0.2-2:
+  version "3.0.2-2"
+  resolved "https://registry.yarnpkg.com/ember-table/-/ember-table-3.0.2-2.tgz#9e530504f4f1ea75e50197854a81adff15ce6bf5"
+  integrity sha512-Gn3ZaykgHH7kdPEH1ZYWSaVdnVLO6DY+MFFVliOr41ZaBnTW3hU8TAmFtIiQ4MObPdU1EuCpFuZM287oXd6mcQ==
   dependencies:
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.12.13"
     "@babel/plugin-proposal-numeric-separator" "^7.12.13"
