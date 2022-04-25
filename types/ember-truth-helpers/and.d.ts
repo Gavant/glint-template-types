@@ -1,4 +1,4 @@
-import Helper from '@glint/environment-ember-loose/ember-component/helper';
+import Helper from '@ember/component/helper';
 import { Falsy, Maybe, UnsetValue } from './-private/shared';
 
 // NOTE: These types are somewhat imperfect.
@@ -10,7 +10,7 @@ import { Falsy, Maybe, UnsetValue } from './-private/shared';
 type AndPair<A, B> = Falsy<A> extends true ? A : B extends UnsetValue ? A : A | B;
 
 interface AndHelperSignature<A, B, C, D, E> {
-    PositionalArgs: [A, B?, C?, D?, E?];
+    Args: { Positional: [A, B?, C?, D?, E?] };
     Return: AndPair<A, AndPair<B, AndPair<C, AndPair<D, E>>>>;
 }
 

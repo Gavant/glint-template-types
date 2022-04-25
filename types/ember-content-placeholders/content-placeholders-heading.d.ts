@@ -1,11 +1,14 @@
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 
-interface ContentPlaceholdersHeadingSignature {
-    Args: {
-        rounded?: boolean;
-        centered?: boolean;
-        animated?: boolean;
-    };
+interface ContentPlaceholdersHeadingArgs {
+    rounded?: boolean;
+    centered?: boolean;
+    animated?: boolean;
 }
 
+interface ContentPlaceholdersHeadingSignature {
+    Args: ContentPlaceholdersHeadingArgs;
+}
+
+export default interface ContentPlaceholdersHeading extends ContentPlaceholdersHeadingArgs {}
 export default class ContentPlaceholdersHeading extends Component<ContentPlaceholdersHeadingSignature> {}

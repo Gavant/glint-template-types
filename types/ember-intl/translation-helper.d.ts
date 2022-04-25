@@ -1,10 +1,12 @@
-import Helper from '@glint/environment-ember-loose/ember-component/helper';
+import Helper from '@ember/component/helper';
 
 export class TranslationHelper extends Helper<{
-    PositionalArgs: [string];
-    NamedArgs: {
-        [key: string]: any;
-        htmlSafe?: boolean;
+    Args: {
+        Positional: [string];
+        Named: {
+            [key: string]: any;
+            htmlSafe?: boolean;
+        };
     };
     Return: string;
 }> {}

@@ -1,14 +1,14 @@
-import Helper from '@glint/environment-ember-loose/ember-component/helper';
+import Helper from '@ember/component/helper';
 
 interface ComparisonHelperSignature {
-    PositionalArgs: [any, any, { forceNumber?: boolean }?];
+    Args: { Positional: [any, any, { forceNumber?: boolean }?] };
     Return: boolean;
 }
 
 export class ComparisonHelper extends Helper<ComparisonHelperSignature> {}
 
 interface EqualityHelperSignature {
-    PositionalArgs: [any, any];
+    Args: { Positional: [any, any] };
     Return: boolean;
 }
 

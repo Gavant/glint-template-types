@@ -1,7 +1,7 @@
-import Helper from '@glint/environment-ember-loose/ember-component/helper';
+import Helper from '@ember/component/helper';
 
 interface IsEmptyHelperSignature {
-    PositionalArgs: [any];
+    Args: { Positional: [any] };
     Return: boolean;
 }
 

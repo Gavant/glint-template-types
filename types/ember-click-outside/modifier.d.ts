@@ -1,18 +1,19 @@
-import Modifier from '@glint/environment-ember-loose/ember-modifier';
+import Modifier from 'ember-modifier';
 
 interface OnClickOutsideSignature<K extends keyof DocumentEventMap = 'click'> {
     Args: {
-        /** Undocumented */
-        capture?: boolean;
+        Named: {
+            /** Undocumented */
+            capture?: boolean;
 
-        /** Undocumented */
-        eventType?: K;
+            /** Undocumented */
+            eventType?: K;
 
-        /** Undocumented */
-        exceptSelector?: string;
+            /** Undocumented */
+            exceptSelector?: string;
+        };
+        Positional: [handler: (event: DocumentEventMap[K]) => void];
     };
-
-    PositionalArgs: [handler: (event: DocumentEventMap[K]) => void];
 }
 
 export default class OnClickOutsideModifier extends Modifier<OnClickOutsideSignature> {}

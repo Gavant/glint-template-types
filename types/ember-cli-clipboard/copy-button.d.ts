@@ -1,4 +1,4 @@
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 
 interface CopyButtonSignature {
     Element: HTMLButtonElement;
@@ -6,7 +6,7 @@ interface CopyButtonSignature {
         clipboardText: string;
         success: () => void;
     };
-    Yields: {
+    Blocks: {
         default: [];
     };
 }

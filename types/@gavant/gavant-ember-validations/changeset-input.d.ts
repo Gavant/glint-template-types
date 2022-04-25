@@ -1,4 +1,4 @@
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 
 import { GenericChangeset } from '@gavant/ember-validations/utilities/create-changeset';
 

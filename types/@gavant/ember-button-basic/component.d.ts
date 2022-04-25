@@ -1,4 +1,4 @@
-import Component from '@glint/environment-ember-loose/glimmer-component';
+import Component from '@glimmer/component';
 
 import { BaseGlimmerSignature } from '@gavant/glint-template-types/utils/types';
 

@@ -1,13 +1,15 @@
 import { SafeString } from '@gavant/glint-template-types/utils/types';
-import Helper from '@glint/environment-ember-loose/ember-component/helper';
+import Helper from '@ember/component/helper';
 
 interface SvgJarHelperSignature {
-    PositionalArgs: [name: string];
-    NamedArgs: Record<string, unknown> & {
-        class?: string;
-        role?: string;
-        title?: string;
-        desc?: string;
+    Args: {
+        Positional: [name: string];
+        Named: Record<string, unknown> & {
+            class?: string;
+            role?: string;
+            title?: string;
+            desc?: string;
+        };
     };
     Return: SafeString;
 }

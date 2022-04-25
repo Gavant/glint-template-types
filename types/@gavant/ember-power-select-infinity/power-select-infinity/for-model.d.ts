@@ -1,4 +1,4 @@
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 import { Select } from 'ember-power-select/addon/components/power-select';
 
 import { PowerSelectInfinityArgs } from '@gavant/glint-template-types/types/@gavant/ember-power-select-infinity/power-select-infinity';
@@ -62,7 +62,7 @@ export interface PowerSelectInfinityForModelArgs<T, E> extends PowerSelectInfini
 
 export interface PowerSelectInfinityForModelSignature<T, E> {
     Args: PowerSelectInfinityForModelArgs<T, E>;
-    Yields: {
+    Blocks: {
         default?: [T, Select];
     };
     Element: HTMLDivElement;

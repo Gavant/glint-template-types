@@ -1,5 +1,5 @@
-import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
-import Component from '@glint/environment-ember-loose/ember-component';
+import { WithBoundArgs } from '@glint/template';
+import Component from '@ember/component';
 
 import ContentPlaceholdersHeading from '@gavant/glint-template-types/types/ember-content-placeholders/content-placeholders-heading';
 import ContentPlaceholdersImg from '@gavant/glint-template-types/types/ember-content-placeholders/content-placeholders-img';
@@ -13,13 +13,13 @@ interface ContentPlaceholdersSignature {
         centered?: boolean;
         animated?: boolean;
     };
-    Yields: {
+    Blocks: {
         default: [
             {
-                heading: ComponentWithBoundArgs<typeof ContentPlaceholdersHeading, 'rounded' | 'animated' | 'centered'>;
-                text: ComponentWithBoundArgs<typeof ContentPlaceholdersText, 'rounded' | 'animated' | 'centered'>;
-                img: ComponentWithBoundArgs<typeof ContentPlaceholdersImg, 'rounded' | 'animated' | 'centered'>;
-                nav: ComponentWithBoundArgs<typeof ContentPlaceholdersNav, 'rounded' | 'animated' | 'centered'>;
+                heading: WithBoundArgs<typeof ContentPlaceholdersHeading, 'rounded' | 'animated' | 'centered'>;
+                text: WithBoundArgs<typeof ContentPlaceholdersText, 'rounded' | 'animated' | 'centered'>;
+                img: WithBoundArgs<typeof ContentPlaceholdersImg, 'rounded' | 'animated' | 'centered'>;
+                nav: WithBoundArgs<typeof ContentPlaceholdersNav, 'rounded' | 'animated' | 'centered'>;
             }
         ];
     };

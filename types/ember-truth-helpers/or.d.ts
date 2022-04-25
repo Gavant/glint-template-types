@@ -1,4 +1,4 @@
-import Helper from '@glint/environment-ember-loose/ember-component/helper';
+import Helper from '@ember/component/helper';
 import { Falsy, Maybe, UnsetValue } from './-private/shared';
 
 // NOTE: These types are somewhat imperfect.
@@ -15,7 +15,7 @@ type OrPair<A, B> = B extends UnsetValue
     : A | B;
 
 interface OrHelperSignature<A, B, C, D, E> {
-    PositionalArgs: [A, B?, C?, D?, E?];
+    Args: { Positional: [A, B?, C?, D?, E?] };
     Return: OrPair<OrPair<OrPair<OrPair<A, B>, C>, D>, E>;
 }
 

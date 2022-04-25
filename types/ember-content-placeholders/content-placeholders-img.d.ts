@@ -1,4 +1,4 @@
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 
 interface ContentPlaceholdersImgSignature {
     Args: {
@@ -6,7 +6,7 @@ interface ContentPlaceholdersImgSignature {
         centered?: boolean;
         animated?: boolean;
     };
-    Yields: {
+    Blocks: {
         default: [];
     };
 }

@@ -1,5 +1,5 @@
-import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
-import Component from '@glint/environment-ember-loose/ember-component';
+import { WithBoundArgs } from '@glint/template';
+import Component from '@ember/component';
 
 import { ModalDialogBody } from '@gavant/glint-template-types/types/@gavant/gavant-ember-modals/modal-dialog/body';
 import { ModalDialogFooter } from '@gavant/glint-template-types/types/@gavant/gavant-ember-modals/modal-dialog/footer';
@@ -25,10 +25,10 @@ interface GavantModalDialogArgs extends ModalDialogArgs {
 }
 
 interface ModalDialogYields {
-    Yields: {
+    Blocks: {
         default: [
             {
-                header: ComponentWithBoundArgs<typeof ModalDialogHeader, 'closable' | 'onClose'>;
+                header: WithBoundArgs<typeof ModalDialogHeader, 'closable' | 'onClose'>;
                 body: typeof ModalDialogBody;
                 footer: typeof ModalDialogFooter;
                 close: () => void;

@@ -1,12 +1,12 @@
-import { SignatureWithPositionedArg } from '@gavant/glint-template-types/utils/types';
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 import { AnimatedEachSignature } from './animated-each';
 
 type AnimatedIfSignature = {
-    Args: Omit<AnimatedEachSignature<any>['Args'], 'items'> & {
-        predicate: any;
+    Args: {
+        Named: AnimatedEachSignature<any>['Args']['Named'];
+        Positional: { predicate: any };
     };
-    Yields: {
+    Blocks: {
         default: [];
         else: [];
     };
@@ -14,4 +14,4 @@ type AnimatedIfSignature = {
 
 export default class AnimatedIf extends Component<AnimatedIfSignature> {}
 
-export class AnimatedIfCurly extends Component<SignatureWithPositionedArg<AnimatedIfSignature, 'predicate'>> {}
+export class AnimatedIfCurly extends Component<AnimatedIfSignature> {}

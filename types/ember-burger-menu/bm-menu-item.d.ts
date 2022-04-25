@@ -1,6 +1,6 @@
 import ArrayProxy from '@ember/array/proxy';
 
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 
 import { BurgerMenuState } from '@gavant/glint-template-types/types/ember-burger-menu/burger-menu';
 

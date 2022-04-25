@@ -1,11 +1,14 @@
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 
-interface ContentPlaceholdersNavSignature {
-    Args: {
-        rounded?: boolean;
-        centered?: boolean;
-        animated?: boolean;
-    };
+interface ContentPlaceholdersNavArgs {
+    rounded?: boolean;
+    centered?: boolean;
+    animated?: boolean;
 }
 
+interface ContentPlaceholdersNavSignature {
+    Args: ContentPlaceholdersNavArgs;
+}
+
+export default interface ContentPlaceholdersNav extends ContentPlaceholdersNavArgs {}
 export default class ContentPlaceholdersNav extends Component<ContentPlaceholdersNavSignature> {}

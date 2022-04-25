@@ -1,9 +1,8 @@
-import Helper from '@glint/environment-ember-loose/ember-component/helper';
+import Helper from '@ember/component/helper';
 import { OnArgs } from './-private/shared';
 
 interface OnDocumentHelperSignature<K extends keyof DocumentEventMap> {
-    Args: OnArgs;
-    PositionalArgs: [eventName: K, handler: (event: DocumentEventMap[K]) => void];
+    Args: { Named: OnArgs; Positional: [eventName: K, handler: (event: DocumentEventMap[K]) => void] };
     Return: null;
 }
 
