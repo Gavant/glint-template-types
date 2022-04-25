@@ -1,4 +1,4 @@
-import { ComponentSignature } from "@glint/environment-ember-loose";
+import { ComponentSignature } from '@glint/environment-ember-loose';
 import { htmlSafe } from '@ember/template';
 
 /**
@@ -32,9 +32,9 @@ export interface BaseGlimmerSignature<T> {
 export type ModifyYields<T, Y> = Omit<T, 'Yields'> & Y;
 
 export type SignatureWithPositionedArg<S extends ComponentSignature, K extends keyof S['Args']> = {
-  Args: Omit<S['Args'], K>,
-  PositionalArgs: [S['Args'][K]],
-  Yields: 'Yields' extends keyof S ? S['Yields'] : undefined
+    Args: Omit<S['Args'], K>;
+    PositionalArgs: [S['Args'][K]];
+    Yields: 'Yields' extends keyof S ? S['Yields'] : undefined;
 };
 
 export type SafeString = ReturnType<typeof htmlSafe>;

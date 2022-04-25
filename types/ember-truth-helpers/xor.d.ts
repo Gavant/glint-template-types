@@ -1,3 +1,3 @@
-import { ComparisonHelper as XorHelper } from "./-private/shared";
+import { ComparisonHelper as XorHelper } from './-private/shared';
 
 export default XorHelper;

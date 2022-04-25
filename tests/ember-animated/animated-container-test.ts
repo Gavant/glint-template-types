@@ -10,4 +10,6 @@ emitComponent(resolve(AnimatedContainer)({ tag: 123 }));
 expectTypeOf(emitComponent(resolve(AnimatedContainer)({})).element).toEqualTypeOf<HTMLDivElement>();
 expectTypeOf(emitComponent(resolve(AnimatedContainer)({ tag: 'div' })).element).toEqualTypeOf<HTMLDivElement>();
 expectTypeOf(emitComponent(resolve(AnimatedContainer)({ tag: 'svg' })).element).toEqualTypeOf<SVGSVGElement>();
-expectTypeOf(emitComponent(resolve(AnimatedContainer)({ tag: 'a' })).element).toEqualTypeOf<HTMLAnchorElement & SVGAElement>();
+expectTypeOf(emitComponent(resolve(AnimatedContainer)({ tag: 'a' })).element).toEqualTypeOf<
+    HTMLAnchorElement & SVGAElement
+>();

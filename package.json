@@ -4,7 +4,9 @@
     "description": "Template types for ember/glimmer glint",
     "repository": "https://github.com/Gavant/glint-template-types.git",
     "scripts": {
-        "test": "tsc"
+        "test": "tsc",
+        "lint": "prettier . --check",
+        "lint:fix": "prettier . --write"
     },
     "main": "types",
     "author": "Gavant",
@@ -37,6 +39,7 @@
         "ember-concurrency-ts": "^0.2.2",
         "ember-power-select": "^4.1.6",
         "expect-type": "^0.11.0",
+        "prettier": "^2.6.2",
         "release-it": "^14.6.1",
         "typescript": "^4.2.4",
         "validated-changeset": "^0.14.3"

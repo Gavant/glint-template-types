@@ -1,3 +1,3 @@
-import { EqualityHelper as IsEqualHelper } from "./-private/shared";
+import { EqualityHelper as IsEqualHelper } from './-private/shared';
 
 export default IsEqualHelper;

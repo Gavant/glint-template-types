@@ -1,3 +1,3 @@
-import { EqualityHelper as NotEqHelper } from "./-private/shared";
+import { EqualityHelper as NotEqHelper } from './-private/shared';
 
 export default NotEqHelper;

@@ -1,4 +1,4 @@
-import Helper from "@glint/environment-ember-loose/ember-component/helper";
+import Helper from '@glint/environment-ember-loose/ember-component/helper';
 
 // NOTE: These types are somewhat imperfect.
 // For instance, the limit at 5 is arbitrary. Also, the actual helpers
@@ -7,8 +7,8 @@ import Helper from "@glint/environment-ember-loose/ember-component/helper";
 // narrow as much as we potentially could.
 
 interface NotHelperSignature {
-  PositionalArgs: any[];
-  Return: boolean;
+    PositionalArgs: any[];
+    Return: boolean;
 }
 
 export default class NotHelper extends Helper<NotHelperSignature> {}

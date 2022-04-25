@@ -1,7 +1,13 @@
 import Component from '@glint/environment-ember-loose/ember-component';
 
 import {
-    FlipProp, IconName, IconPrefix, PullProp, RotateProp, SizeProp, Transform
+    FlipProp,
+    IconName,
+    IconPrefix,
+    PullProp,
+    RotateProp,
+    SizeProp,
+    Transform
 } from '@fortawesome/fontawesome-svg-core';
 
 export interface FaIconComponentSignature {

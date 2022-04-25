@@ -14,36 +14,36 @@ expectTypeOf(svgJar({}, 'my-svg')).toEqualTypeOf<SafeString>();
 svgJar({ class: 'my-svg', role: 'img', title: 'My SVG', description: "This isn't your SVG" }, 'my-svg');
 
 svgJar(
-  {
-    // @ts-expect-error class must be a string
-    class: 1
-  },
-  'my-svg'
+    {
+        // @ts-expect-error class must be a string
+        class: 1
+    },
+    'my-svg'
 );
 
 svgJar(
-  {
-    // @ts-expect-error role must be a string
-    role: 1
-  },
-  'my-svg'
+    {
+        // @ts-expect-error role must be a string
+        role: 1
+    },
+    'my-svg'
 );
 
 svgJar(
-  {
-    // @ts-expect-error title must be a string
-    title: 1
-  },
-  'my-svg'
+    {
+        // @ts-expect-error title must be a string
+        title: 1
+    },
+    'my-svg'
 );
 
 svgJar(
-  {
-    // @ts-expect-error desc must be a string
-    desc: 1
-  },
-  'my-svg'
+    {
+        // @ts-expect-error desc must be a string
+        desc: 1
+    },
+    'my-svg'
 );
 
 // Allows unknown arguments
-svgJar({ width: "10px" }, 'my-svg');
+svgJar({ width: '10px' }, 'my-svg');
