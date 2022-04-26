@@ -1,4 +1,5 @@
 import { htmlSafe } from '@ember/template';
+import { ExpandSignature } from '@glimmer/component/-private/component';
 
 /**
  * Workaround for https://discord.com/channels/480462759797063690/484421406659182603/827512106696966154
@@ -28,6 +29,16 @@ export interface BaseGlimmerSignature<T> {
  * @interface BaseGlimmerSignature
  * @template T
  */
-export type ModifyYields<T, Y> = Omit<T, 'Yields'> & Y;
+export type ModifyBlocks<T, B> = Omit<T, 'Blocks'> & B;
+
+// WARNING: This is not guaranteed to maintain argument position if more than one args name is passed!
+export type SignatureWithPositionedArg<S, K extends keyof ExpandSignature<S>['Args']['Named']> = {
+    Element: ExpandSignature<S>['Element'];
+    Args: {
+        Named: Omit<ExpandSignature<S>['Args']['Named'], K>;
+        Positional: [ExpandSignature<S>['Args']['Named'][K]];
+    };
+    Blocks: ExpandSignature<S>['Blocks'];
+};
 
 export type SafeString = ReturnType<typeof htmlSafe>;
