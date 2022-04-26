@@ -1,5 +1,5 @@
 import { ElementForTagName } from '@glint/environment-ember-loose/-private/dsl';
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 
 interface AnimatedContainerSignature<Tag extends string> {
     /** Multiple tags supported for base element via `tag` arg */
@@ -13,7 +13,7 @@ interface AnimatedContainerSignature<Tag extends string> {
         /** Use a custom tag for the container. Defaults to div. */
         tag?: Tag;
     };
-    Yields: {
+    Blocks: {
         default: [];
     };
 }

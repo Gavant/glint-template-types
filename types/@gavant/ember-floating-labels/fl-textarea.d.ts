@@ -1,9 +1,9 @@
-import Component from '@glint/environment-ember-loose/glimmer-component';
+import Component from '@glimmer/component';
 
 import { BaseGlimmerSignature, ModifyYields } from '@gavant/glint-template-types/utils/types';
 
 interface FlTextareaYields {
-    Yields: {
+    Blocks: {
         default?: [];
     };
 }

@@ -1,10 +1,10 @@
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 
 interface AnimatedBeaconSignature {
     Args: {
         name: string;
     };
-    Yields: {
+    Blocks: {
         default: [];
     };
 }

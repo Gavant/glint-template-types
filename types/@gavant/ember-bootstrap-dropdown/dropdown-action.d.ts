@@ -1,4 +1,4 @@
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 import { Dropdown as BasicDropdown } from 'ember-basic-dropdown/addon/components/basic-dropdown';
 
 import { DropdownActionArgs } from '@gavant/ember-bootstrap-dropdown/addon/components/dropdown-action';

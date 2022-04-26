@@ -1,4 +1,4 @@
-import Component from '@glint/environment-ember-loose/glimmer-component';
+import Component from '@glimmer/component';
 import { PowerSelectArgs as PSArgs } from 'ember-power-select/addon/components/power-select';
 import { PowerSelectAPI } from 'ember-power-select/types/power-select-api';
 
@@ -104,7 +104,7 @@ interface PowerSelectArgs<T, E> extends modifiedPSArgs<T> {
 interface PowerSelectSignature<T, E extends Record<string, unknown>> {
     Element: HTMLDivElement;
     Args: PowerSelectArgs<T, E>;
-    Yields: {
+    Blocks: {
         default: [T, PowerSelectAPI<T>];
     };
 }

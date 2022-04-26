@@ -1,4 +1,4 @@
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 import { Select } from 'ember-power-select/addon/components/power-select';
 
 import { PowerSelectArgs } from '@gavant/glint-template-types/types/ember-power-select/power-select';
@@ -125,7 +125,7 @@ export interface PowerSelectInfinityArgs<T, E> extends PowerSelectArgs<T, E> {
 
 export interface PowerSelectInfinitySignature<T, E> {
     Args: PowerSelectInfinityArgs<T, E>;
-    Yields: {
+    Blocks: {
         default?: [T, Select];
     };
     Element: HTMLDivElement;

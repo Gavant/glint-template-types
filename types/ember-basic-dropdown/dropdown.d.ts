@@ -1,5 +1,5 @@
-import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
-import Component from '@glint/environment-ember-loose/glimmer-component';
+import { WithBoundArgs } from '@glint/template';
+import Component from '@glimmer/component';
 import { DropdownActions } from 'ember-basic-dropdown/addon/components/basic-dropdown';
 import { CalculatePosition } from 'ember-basic-dropdown/addon/utils/calculate-position';
 
@@ -24,18 +24,18 @@ export interface DropdownArgs {
 }
 
 interface DropdownYields {
-    Yields: {
+    Blocks: {
         default: [
             {
                 uniqueId: string;
                 isOpen: boolean;
                 disabled: boolean;
                 actions: DropdownActions;
-                Trigger: ComponentWithBoundArgs<
+                Trigger: WithBoundArgs<
                     typeof DropdownTrigger,
                     'dropdown' | 'hPosition' | 'renderInPlace' | 'vPosition'
                 >;
-                Content: ComponentWithBoundArgs<
+                Content: WithBoundArgs<
                     typeof DropdownContent,
                     | 'dropdown'
                     | 'hPosition'

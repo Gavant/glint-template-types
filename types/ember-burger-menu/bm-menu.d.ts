@@ -1,5 +1,5 @@
-import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
-import Component from '@glint/environment-ember-loose/ember-component';
+import { WithBoundArgs } from '@glint/template';
+import Component from '@ember/component';
 
 import BmMenuItem from '@gavant/glint-template-types/types/ember-burger-menu/bm-menu-item';
 import { BurgerMenuState } from '@gavant/glint-template-types/types/ember-burger-menu/burger-menu';
@@ -11,10 +11,10 @@ export interface BmMenuComponentSignature {
         state: BurgerMenuState;
         containerId: string;
     };
-    Yields: {
+    Blocks: {
         default: [
             {
-                item: ComponentWithBoundArgs<typeof BmMenuItem, 'tagName' | 'menuItems' | 'dismissOnClick' | 'state'>;
+                item: WithBoundArgs<typeof BmMenuItem, 'tagName' | 'menuItems' | 'dismissOnClick' | 'state'>;
             }
         ];
     };

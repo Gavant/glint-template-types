@@ -1,5 +1,5 @@
-import { ComponentLike } from '@glint/environment-ember-loose';
-import Component from '@glint/environment-ember-loose/glimmer-component';
+import { ComponentLike } from '@glint/template';
+import Component from '@glimmer/component';
 import { PowerSelectAPI } from 'ember-power-select/types/power-select-api';
 
 type PowerSelectMultipleAPI<T> = Omit<PowerSelectAPI<T>, 'selected'> & { selected: T[] };
@@ -55,7 +55,7 @@ interface PowerSelectArgs<T> {
 interface PowerSelectMultipleSignature<T> {
     Element: HTMLDivElement;
     Args: PowerSelectArgs<T>;
-    Yields: {
+    Blocks: {
         default: [T, PowerSelectMultipleAPI<T>];
     };
 }

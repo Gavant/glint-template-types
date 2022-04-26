@@ -1,4 +1,4 @@
-import Component from '@glint/environment-ember-loose/glimmer-component';
+import Component from '@glimmer/component';
 import { Select } from 'ember-power-select/addon/components/power-select';
 
 export interface PowerSelectOptionsArgs<T> {
@@ -18,7 +18,7 @@ export interface PowerSelectOptionsArgs<T> {
 
 export interface PowerSelectOptionsSignature<T> {
     Args: PowerSelectOptionsArgs<T>;
-    Yields: {
+    Blocks: {
         default?: [T, Select];
     };
     Element: HTMLUListElement;

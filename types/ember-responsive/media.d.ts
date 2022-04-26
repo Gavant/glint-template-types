@@ -1,4 +1,4 @@
-import Helper from '@glint/environment-ember-loose/ember-component/helper';
+import Helper from '@ember/component/helper';
 
 /**
  * By default, will allow anything for the positional arg to the `media` helper.
@@ -7,6 +7,6 @@ import Helper from '@glint/environment-ember-loose/ember-component/helper';
  * Then register `MyMediaHelper` with the registry instead of `MediaHelper`.
  */
 export default class MediaHelper<T> extends Helper<{
-    PositionalArgs: [sizeCheck: T];
+    Args: { Positional: [sizeCheck: T] };
     Return: boolean;
 }> {}

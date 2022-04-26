@@ -1,4 +1,4 @@
-import Helper from '@glint/environment-ember-loose/ember-component/helper';
+import Helper from '@ember/component/helper';
 import { Task } from 'ember-concurrency';
 
 type PrefixOf<T extends unknown[]> = T extends []
@@ -21,7 +21,7 @@ type RemovePrefix<Prefix extends unknown[], Tuple extends unknown[]> = [] extend
     : [];
 
 type PerformHelperSignature<T extends Task<any, any>, GivenArgs extends PrefixOf<TaskArgs<T>>> = {
-    PositionalArgs: [T, ...GivenArgs];
+    Args: { Positional: [T, ...GivenArgs] };
     Return: (...params: RemovePrefix<GivenArgs, TaskArgs<T>>) => Promise<TaskReturn<T>>;
 };
 

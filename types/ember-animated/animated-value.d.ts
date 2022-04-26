@@ -1,16 +1,18 @@
-import { SignatureWithPositionedArg } from '@gavant/glint-template-types/utils/types';
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 import { AnimatedEachSignature } from './animated-each';
 
 interface AnimatedValueSignature<T> {
-    Args: Omit<AnimatedEachSignature<any>['Args'], 'items'> & {
-        value: T;
+    Args: {
+        Named: AnimatedEachSignature<any>['Args']['Named'];
+        Positional: {
+            value: T;
+        };
     };
-    Yields: {
+    Blocks: {
         default: [T];
     };
 }
 
 export default class AnimatedValue<T> extends Component<AnimatedValueSignature<T>> {}
 
-export class AnimatedValueCurly<T> extends Component<SignatureWithPositionedArg<AnimatedValueSignature<T>, 'value'>> {}
+export class AnimatedValueCurly<T> extends Component<AnimatedValueSignature<T>> {}

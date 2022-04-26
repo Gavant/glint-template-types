@@ -1,4 +1,3 @@
-import { ComponentSignature } from '@glint/environment-ember-loose';
 import { htmlSafe } from '@ember/template';
 
 /**
@@ -18,7 +17,7 @@ export type GlintTemporaryTypeFix<T> = { [K in keyof T]: T[K] };
 export interface BaseGlimmerSignature<T> {
     Element?: HTMLElement;
     Args: GlintTemporaryTypeFix<T>;
-    Yields: {
+    Blocks: {
         default?: [];
     };
 }
@@ -30,11 +29,5 @@ export interface BaseGlimmerSignature<T> {
  * @template T
  */
 export type ModifyYields<T, Y> = Omit<T, 'Yields'> & Y;
-
-export type SignatureWithPositionedArg<S extends ComponentSignature, K extends keyof S['Args']> = {
-    Args: Omit<S['Args'], K>;
-    PositionalArgs: [S['Args'][K]];
-    Yields: 'Yields' extends keyof S ? S['Yields'] : undefined;
-};
 
 export type SafeString = ReturnType<typeof htmlSafe>;

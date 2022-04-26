@@ -1,4 +1,4 @@
-import Component from '@glint/environment-ember-loose/ember-component';
+import Component from '@ember/component';
 
 import FormValidator from '@gavant/glint-template-types/types/@gavant/gavant-ember-validations/form-validator';
 
@@ -10,7 +10,7 @@ export interface InputValidatorSignature {
         errors: string | string[] | ValidationErr[];
         parent: typeof FormValidator;
     };
-    Yields: {
+    Blocks: {
         default?: [];
     };
 }

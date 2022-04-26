@@ -1,5 +1,5 @@
-import { ComponentWithBoundArgs } from '@glint/environment-ember-loose';
-import Component from '@glint/environment-ember-loose/ember-component';
+import { WithBoundArgs } from '@glint/template';
+import Component from '@ember/component';
 
 import FormValidatorComponent from '@gavant/ember-validations/components/form-validator';
 import { GenericChangeset } from '@gavant/ember-validations/utilities/create-changeset';
@@ -8,8 +8,8 @@ import InputValidator from '@gavant/glint-template-types/types/@gavant/gavant-em
 
 export interface FormValidatorYield {
     submit: FormValidatorComponent['submitForm'];
-    input: ComponentWithBoundArgs<typeof InputValidator, 'parent'>;
-    child: ComponentWithBoundArgs<typeof FormValidatorChild, 'parent'>;
+    input: WithBoundArgs<typeof InputValidator, 'parent'>;
+    child: WithBoundArgs<typeof FormValidatorChild, 'parent'>;
 }
 
 export interface FormValidatorSignature<T> {
@@ -18,7 +18,7 @@ export interface FormValidatorSignature<T> {
         changeset: GenericChangeset<T>;
         submit: (changeset?: GenericChangeset<T>, childChangesets?: GenericChangeset<unknown>[]) => any;
     };
-    Yields: {
+    Blocks: {
         default: [GenericChangeset<T>, FormValidatorYield];
     };
 }
