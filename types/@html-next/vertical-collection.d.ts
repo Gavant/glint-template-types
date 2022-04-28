@@ -1,8 +1,9 @@
 import NativeArray from '@ember/array/-private/native-array';
-
 import Component from '@ember/component';
+import { SignatureWithPositionedArg } from '@gavant/glint-template-types/utils/types';
 
 export interface VerticalCollectionArgs<T> {
+    items: NativeArray<T> | T[];
     tagName?: string;
     key?: string;
     estimateHeight: number;
@@ -21,7 +22,9 @@ export interface VerticalCollectionArgs<T> {
 
 export interface VerticalCollectionSignature<T> {
     Element: HTMLElement;
-    Args: { Named: VerticalCollectionArgs<T>; Positional: { items: NativeArray<T> | T[] } };
+    Args: {
+        Named: VerticalCollectionArgs<T>;
+    };
     Blocks: {
         default: [T, number];
         else: [];
@@ -29,4 +32,6 @@ export interface VerticalCollectionSignature<T> {
 }
 
 export default class VerticalCollection<T> extends Component<VerticalCollectionSignature<T>> {}
-export class VerticalCollectionCurly<T> extends Component<VerticalCollectionSignature<T>> {}
+export class VerticalCollectionCurly<T> extends Component<
+    SignatureWithPositionedArg<VerticalCollectionSignature<T>, 'items'>
+> {}

@@ -5,7 +5,7 @@ import { CalculatePosition } from 'ember-basic-dropdown/addon/utils/calculate-po
 
 import { DropdownContent } from '@gavant/glint-template-types/types/ember-basic-dropdown/content';
 import { DropdownTrigger } from '@gavant/glint-template-types/types/ember-basic-dropdown/trigger';
-import { BaseGlimmerSignature, ModifyYields } from '@gavant/glint-template-types/utils/types';
+import { BaseGlimmerSignature, ModifyBlocks } from '@gavant/glint-template-types/utils/types';
 
 export interface DropdownArgs {
     initiallyOpened?: boolean;
@@ -23,7 +23,7 @@ export interface DropdownArgs {
     calculatePosition?: CalculatePosition;
 }
 
-interface DropdownYields {
+interface DropdownBlocks {
     Blocks: {
         default: [
             {
@@ -56,5 +56,5 @@ interface DropdownYields {
     };
 }
 
-export class Dropdown extends Component<ModifyYields<BaseGlimmerSignature<DropdownArgs>, DropdownYields>> {}
+export class Dropdown extends Component<ModifyBlocks<BaseGlimmerSignature<DropdownArgs>, DropdownBlocks>> {}
 export default Dropdown;

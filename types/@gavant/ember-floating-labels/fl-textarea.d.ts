@@ -1,8 +1,8 @@
 import Component from '@glimmer/component';
 
-import { BaseGlimmerSignature, ModifyYields } from '@gavant/glint-template-types/utils/types';
+import { BaseGlimmerSignature, ModifyBlocks } from '@gavant/glint-template-types/utils/types';
 
-interface FlTextareaYields {
+interface FlTextareaBlocks {
     Blocks: {
         default?: [];
     };
@@ -10,5 +10,5 @@ interface FlTextareaYields {
 
 import { FlTextareaArgs } from '@gavant/ember-floating-labels/addon/components/fl-textarea';
 export default class FlTextarea extends Component<
-    ModifyYields<BaseGlimmerSignature<FlTextareaArgs>, FlTextareaYields>
+    ModifyBlocks<BaseGlimmerSignature<FlTextareaArgs>, FlTextareaBlocks>
 > {}

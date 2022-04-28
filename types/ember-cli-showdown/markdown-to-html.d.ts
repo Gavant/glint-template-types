@@ -1,12 +1,12 @@
 import Component from '@ember/component';
+import { SignatureWithPositionedArg } from '@gavant/glint-template-types/utils/types';
 
 interface MarkdownToHtmlSignature {
     Element: HTMLDivElement;
     Args: {
-        Positional: {
-            markdown: string;
-        };
         Named: {
+            markdown: string;
+
             /**
              * Omit the trailing newline in a code block.
              * @default
@@ -217,4 +217,4 @@ interface MarkdownToHtmlSignature {
 
 export default class MarkdownToHtml extends Component<MarkdownToHtmlSignature> {}
 
-export class MarkdownToHtmlCurly extends Component<MarkdownToHtmlSignature> {}
+export class MarkdownToHtmlCurly extends Component<SignatureWithPositionedArg<MarkdownToHtmlSignature, 'markdown'>> {}
