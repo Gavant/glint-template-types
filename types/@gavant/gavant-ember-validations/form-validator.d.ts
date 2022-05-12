@@ -1,5 +1,5 @@
 import { WithBoundArgs } from '@glint/template';
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 
 import FormValidatorComponent from '@gavant/ember-validations/components/form-validator';
 import { GenericChangeset } from '@gavant/ember-validations/utilities/create-changeset';
@@ -16,7 +16,7 @@ export interface FormValidatorSignature<T> {
     Element: HTMLFormElement;
     Args: {
         changeset: GenericChangeset<T>;
-        submit: (changeset?: GenericChangeset<T>, childChangesets?: GenericChangeset<unknown>[]) => any;
+        submit: (changesets: [GenericChangeset<T>, GenericChangeset<unknown>[]]) => any;
     };
     Blocks: {
         default: [GenericChangeset<T>, FormValidatorYield];

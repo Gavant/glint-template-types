@@ -1,4 +1,4 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 
 import { GenericChangeset } from '@gavant/ember-validations/utilities/create-changeset';
 
