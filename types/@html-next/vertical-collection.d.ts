@@ -4,10 +4,10 @@ import { SignatureWithPositionedArg } from '@gavant/glint-template-types/utils/t
 
 export interface VerticalCollectionArgs<T> {
     items: NativeArray<T> | T[];
+    estimateHeight: number;
     tagName?: string;
     key?: string;
-    estimateHeight: number;
-    staticHeight?: number;
+    staticHeight?: boolean;
     shouldRecycle?: boolean;
     containerSelector?: string;
     bufferSize?: number;

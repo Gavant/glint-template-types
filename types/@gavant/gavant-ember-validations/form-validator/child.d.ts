@@ -1,4 +1,4 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 
 import { GenericChangeset } from '@gavant/ember-validations/utilities/create-changeset';
 import FormValidatorComponent from '@gavant/glint-template-types/types/@gavant/gavant-ember-validations/form-validator';
@@ -12,8 +12,8 @@ export interface FormValidatorChildSignature<T> {
     };
     Blocks: {
         default: [
-            changeset: GenericChangeset<T>,
-            childValidator: {
+            GenericChangeset<T>,
+            {
                 input: typeof InputValidatorComponent;
             }
         ];

@@ -1,4 +1,4 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 
 import FormValidator from '@gavant/glint-template-types/types/@gavant/gavant-ember-validations/form-validator';
 
