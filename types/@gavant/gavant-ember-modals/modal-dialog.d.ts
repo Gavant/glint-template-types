@@ -1,11 +1,11 @@
-import { WithBoundArgs } from '@glint/template';
 import Component from '@ember/component';
 
 import { ModalDialogBody } from '@gavant/glint-template-types/types/@gavant/gavant-ember-modals/modal-dialog/body';
 import { ModalDialogFooter } from '@gavant/glint-template-types/types/@gavant/gavant-ember-modals/modal-dialog/footer';
 import { ModalDialogHeader } from '@gavant/glint-template-types/types/@gavant/gavant-ember-modals/modal-dialog/header';
 import { ModalDialogArgs } from '@gavant/glint-template-types/types/ember-modal-dialog/modal-dialog';
-import { BaseGlimmerSignature, ModifyBlocks } from '@gavant/glint-template-types/utils/types';
+
+import { WithBoundArgs } from '@glint/template';
 
 interface GavantModalDialogArgs extends ModalDialogArgs {
     /**
@@ -24,7 +24,8 @@ interface GavantModalDialogArgs extends ModalDialogArgs {
     closable?: boolean;
 }
 
-interface ModalDialogBlocks {
+export interface ModalDialogSignature {
+    Args: GavantModalDialogArgs;
     Blocks: {
         default: [
             {
@@ -37,7 +38,5 @@ interface ModalDialogBlocks {
     };
 }
 
-export class ModalDialog extends Component<
-    ModifyBlocks<BaseGlimmerSignature<GavantModalDialogArgs>, ModalDialogBlocks>
-> {}
+export class ModalDialog extends Component<ModalDialogSignature> {}
 export default ModalDialog;

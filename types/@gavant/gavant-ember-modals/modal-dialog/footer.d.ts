@@ -1,7 +1,12 @@
 import Component from '@glimmer/component';
 
-import { BaseGlimmerSignature } from '@gavant/glint-template-types/utils/types';
-
 interface ModalDialogFooterArgs {}
-export class ModalDialogFooter extends Component<BaseGlimmerSignature<ModalDialogFooterArgs>> {}
+export interface ModalDialogFooterSignature {
+    Args: ModalDialogFooterArgs;
+    Blocks: {
+        default: [];
+    };
+}
+
+export class ModalDialogFooter extends Component<ModalDialogFooterSignature> {}
 export default ModalDialogFooter;

@@ -1,11 +1,12 @@
-import { WithBoundArgs } from '@glint/template';
 import Component from '@glimmer/component';
+
 import { DropdownActions } from 'ember-basic-dropdown/addon/components/basic-dropdown';
 import { CalculatePosition } from 'ember-basic-dropdown/addon/utils/calculate-position';
 
 import { DropdownContent } from '@gavant/glint-template-types/types/ember-basic-dropdown/content';
 import { DropdownTrigger } from '@gavant/glint-template-types/types/ember-basic-dropdown/trigger';
-import { BaseGlimmerSignature, ModifyBlocks } from '@gavant/glint-template-types/utils/types';
+
+import { WithBoundArgs } from '@glint/template';
 
 export interface DropdownArgs {
     initiallyOpened?: boolean;
@@ -23,7 +24,9 @@ export interface DropdownArgs {
     calculatePosition?: CalculatePosition;
 }
 
-interface DropdownBlocks {
+export interface DropdownSignature {
+    Element: HTMLDivElement;
+    Args: DropdownArgs;
     Blocks: {
         default: [
             {
@@ -56,5 +59,5 @@ interface DropdownBlocks {
     };
 }
 
-export class Dropdown extends Component<ModifyBlocks<BaseGlimmerSignature<DropdownArgs>, DropdownBlocks>> {}
+export class Dropdown extends Component<DropdownSignature> {}
 export default Dropdown;

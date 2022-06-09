@@ -1,7 +1,6 @@
 import Component from '@glimmer/component';
-import { Dropdown } from 'ember-basic-dropdown/addon/components/basic-dropdown';
 
-import { BaseGlimmerSignature } from '@gavant/glint-template-types/utils/types';
+import { Dropdown } from 'ember-basic-dropdown/addon/components/basic-dropdown';
 
 export interface DropdownContentArgs {
     transitioningInClass?: string;
@@ -28,5 +27,13 @@ export interface DropdownContentArgs {
     shouldReposition?: (mutations: MutationRecord[], dropdown: Dropdown) => boolean;
 }
 
-export class DropdownContent extends Component<BaseGlimmerSignature<DropdownContentArgs>> {}
+export interface DropdownContentSignature {
+    Element: HTMLElement;
+    Args: DropdownContentArgs;
+    Blocks: {
+        default?: [];
+    };
+}
+
+export class DropdownContent extends Component<DropdownContentSignature> {}
 export default DropdownContent;

@@ -1,7 +1,5 @@
 import Component from '@ember/component';
 
-import { BaseGlimmerSignature } from '@gavant/glint-template-types/utils/types';
-
 type positions = 'top' | 'right' | 'bottom' | 'left' | 'center' | 'middle' | 'elementCenter';
 type positionCombinations = `${positions} ${positions}`;
 export interface ModalDialogArgs {
@@ -153,5 +151,12 @@ export interface ModalDialogArgs {
     wrapperClassNames?: string;
 }
 
-export class ModalDialog extends Component<BaseGlimmerSignature<ModalDialogArgs>> {}
+export interface ModalDialogSignature {
+    Args: ModalDialogArgs;
+    Blocks: {
+        default: [];
+    };
+}
+
+export class ModalDialog extends Component<ModalDialogSignature> {}
 export default ModalDialog;
