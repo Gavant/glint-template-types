@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 
-import { FlSelectArgs } from '@gavant/ember-floating-labels/addon/components/fl-select/fl-select';
+import FlSelect, { FlSelectArgs } from '@gavant/ember-floating-labels/addon/components/fl-select/fl-select';
 
 export interface FlSelectSignature {
     Element: HTMLSelectElement;
@@ -10,4 +10,4 @@ export interface FlSelectSignature {
     };
 }
 
-export default class FlSelect extends Component<FlSelectSignature> {}
+export default class FloatingLabelSelect extends Component<FlSelectSignature> {}
