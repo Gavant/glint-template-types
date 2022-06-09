@@ -1,7 +1,6 @@
 import Component from '@glimmer/component';
-import { Dropdown } from 'ember-basic-dropdown/addon/components/basic-dropdown';
 
-import { BaseGlimmerSignature } from '@gavant/glint-template-types/utils/types';
+import { Dropdown } from 'ember-basic-dropdown/addon/components/basic-dropdown';
 
 export interface DropdownTriggerArgs {
     dropdown: Dropdown;
@@ -23,5 +22,13 @@ export interface DropdownTriggerArgs {
     onTouchEnd?: (dropdown?: Dropdown, event?: TouchEvent) => void;
 }
 
-export class DropdownTrigger extends Component<BaseGlimmerSignature<DropdownTriggerArgs>> {}
+export interface DropdownTriggerSignature {
+    Element: HTMLElement;
+    Args: DropdownTriggerArgs;
+    Blocks: {
+        default: [];
+    };
+}
+
+export class DropdownTrigger extends Component<DropdownTriggerSignature> {}
 export default DropdownTrigger;

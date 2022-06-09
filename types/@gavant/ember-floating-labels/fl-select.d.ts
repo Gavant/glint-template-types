@@ -1,12 +1,13 @@
 import Component from '@glimmer/component';
 
 import { FlSelectArgs } from '@gavant/ember-floating-labels/addon/components/fl-select/fl-select';
-import { BaseGlimmerSignature, ModifyBlocks } from '@gavant/glint-template-types/utils/types';
 
-interface FlSelectBlocks {
+export interface FlSelectSignature {
+    Element: HTMLSelectElement;
+    Args: FlSelectArgs;
     Blocks: {
         default?: [select: typeof FlSelect];
     };
 }
 
-export default class FlSelect extends Component<ModifyBlocks<BaseGlimmerSignature<FlSelectArgs>, FlSelectBlocks>> {}
+export default class FlSelect extends Component<FlSelectSignature> {}
