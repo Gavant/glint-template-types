@@ -24,6 +24,7 @@ export interface FaIconComponentSignature {
         fixedWidth?: boolean;
         transform?: Transform;
         symbol?: boolean;
+        spin?: boolean;
     };
 }
 
