@@ -30,8 +30,8 @@ export interface RowMeta<T> {
     readonly isSelected: boolean;
     readonly first: T;
     readonly last: T;
-    readonly next: T;
-    readonly prev: T;
+    readonly next?: T | null;
+    readonly prev?: T | null;
 
     //methods
     select(arg0: RowMetaSelect): void;
