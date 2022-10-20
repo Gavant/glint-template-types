@@ -76,7 +76,7 @@ export interface Column {
     cellComponent?: BodyCellComponent;
     footerComponent?: FooterCellComponent;
     subcolumns?: Column[];
-    footerValuePath: string;
+    footerValuePath?: string;
 }
 
 export interface ColumnMeta {
