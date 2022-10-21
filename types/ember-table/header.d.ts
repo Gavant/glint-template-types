@@ -76,7 +76,7 @@ export interface THeadArgs<TM> {
          * @type {FillMode}
          * @memberof THeadArgs
          */
-    fillMode: FillMode;
+    fillMode?: FillMode;
 
     /**
      * Specifies how columns should be sized when the table is initialized.

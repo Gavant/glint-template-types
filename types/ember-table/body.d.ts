@@ -34,7 +34,7 @@ export interface TBodyArgs<T, TM> {
      * @type {SelectionMode}
      * @memberof TBodyArgs
      */
-    checkboxSelectionMode: SelectionMode;
+    checkboxSelectionMode?: SelectionMode;
 
     /**
      * A selector string that will select the element from which to calculate the viewable height.
