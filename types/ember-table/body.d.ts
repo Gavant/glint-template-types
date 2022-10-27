@@ -1,12 +1,10 @@
-// declare module 'ember-table/components/ember-tbody/component' {
-// eslint-disable-next-line ember/no-classic-components
 import Component from '@ember/component';
 
 import { WithBoundArgs } from '@glint/template';
 
 import EmberTableCell from './cell';
 import EmberTableRow from './row';
-import { SelectionMode, TableMeta } from './table';
+import { Column, ColumnMeta, RowValue, SelectionMode, TableApi, TableMeta } from './table';
 
 /**
  * T - Table rows
@@ -17,8 +15,15 @@ import { SelectionMode, TableMeta } from './table';
  * @template T
  * @template TM
  */
-export interface TBodyArgs<T, TM> {
-    api: any;
+export interface TBodyArgs<
+    RV extends RowValue,
+    CV extends Column<RV, M, CM, RM, TM>,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> {
+    api: TableApi<CV, RV, M, CM, RM, TM>;
     /**
      * The number of extra rows to render on either side of the table's viewport
      *
@@ -145,7 +150,7 @@ export interface TBodyArgs<T, TM> {
      * @type {T[]}
      * @memberof TBodyArgs
      */
-    rows: T[];
+    rows: RV[];
 
     /**
      * Sets which checkbox selection behavior to follow. Possible values are 'none' (clicking on a row does nothing),
@@ -170,7 +175,7 @@ export interface TBodyArgs<T, TM> {
      * @type {(T[] | T | null)}
      * @memberof TBodyArgs
      */
-    selection?: T[] | T | null;
+    selection?: RV[] | RV | null;
 
     /**
      * A function that will override how selection is compared to row value.
@@ -197,15 +202,24 @@ export interface TBodyArgs<T, TM> {
      */
     tableMeta?: TableMeta<TM>;
 }
-export interface EmberTableBodySignature {
-    Args: TBodyArgs<unknown, unknown>;
+export interface EmberTableBodySignature<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> {
+    Args: TBodyArgs<RV, CV, M, CM, RM, TM>;
     Blocks: {
         default: [
             {
-                cells: EmberTableCell[];
-                isHeader: boolean;
+                rowValue: RV;
+                rowMeta: RM;
+                cells: EmberTableCell<CV, RV, M, CM, RM, TM>[];
+                rowSelectionMode: SelectionMode;
+                rowToggleMode: boolean;
                 rowsCount: number;
-                rowValue: unknown;
                 row: WithBoundArgs<typeof EmberTableRow, 'api'>;
             }
         ];
@@ -214,11 +228,34 @@ export interface EmberTableBodySignature {
     Element: HTMLDivElement;
 }
 
-type Args = EmberTableBodySignature['Args'];
+type Args<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> = EmberTableBodySignature<CV, RV, M, CM, RM, TM>['Args'];
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default interface EmberTableBody<T> extends Args {}
+export default interface EmberTableBody<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+    // T extends EmberTableBodySignature<CV, RV, M, CM, RM, TM>
+> extends Args<CV, RV, M, CM, RM, TM> {}
 
 // eslint-disable-next-line ember/require-tagless-components
-export default class EmberTableBody<T extends EmberTableBodySignature> extends Component<T> {}
-// }
+export default class EmberTableBody<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+    // T extends EmberTableBodySignature<CV, RV, M, CM, RM, TM>
+    // eslint-disable-next-line ember/require-tagless-components
+> extends Component<EmberTableBodySignature<CV, RV, M, CM, RM, TM>> {}

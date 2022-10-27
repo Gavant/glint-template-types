@@ -23,6 +23,9 @@
         "experimentalDecorators": true,
         "paths": {
             "@gavant/glint-template-types/*": ["*"]
-        }
+        },
+    },
+    "glint": {
+        "environment": "ember-loose",
     }
 }

@@ -1,18 +1,12 @@
-// declare module 'ember-table/components/ember-tr/component' {
-// eslint-disable-next-line ember/no-classic-components
+
 import Component from '@ember/component';
+
+import { GetOrElse } from '@gavant/glint-template-types/utils/types';
 
 import { WithBoundArgs } from '@glint/template';
 
-import EmberTableCell, { CellMeta } from './cell';
-import { Column, TableApi, TableMeta } from './table';
-
-export interface RowClickEvent<R, TM> {
-    event: MouseEvent;
-    rowValue: R;
-    rowMeta: RowMeta<R>;
-    tableMeta?: TableMeta<TM>;
-}
+import EmberTableCell from './cell';
+import { Column, ColumnMeta, RowValue, TableMeta } from './table';
 
 interface RowMetaSelect {
     toggle?: boolean;
@@ -30,27 +24,41 @@ export interface RowMeta<T> {
     readonly isSelected: boolean;
     readonly first: T;
     readonly last: T;
-    readonly next?: T | null;
-    readonly prev?: T | null;
+    readonly next: T;
+    readonly prev: T;
 
     //methods
     select(arg0: RowMetaSelect): void;
 }
 
-interface RowApi extends TableApi {
-    cellValue: unknown;
-    cellMeta: CellMeta;
-    columnValue: Column;
-    columnMeta: unknown;
-    rowValue: unknown;
+export interface RowClickEvent<R, TM> {
+    event: MouseEvent;
+    rowValue: R;
+    rowMeta: RowMeta<R>;
+    tableMeta?: TableMeta<TM>;
+}
+
+interface RowApi<CV extends Column<RV, M, CM, RM, TM>, RV extends RowValue, M, CM extends ColumnMeta, RM, TM> {
+    cellValue: GetOrElse<RV, CV['valuePath'], never>;
+    cellMeta: M;
+    columnValue: CV;
+    columnMeta: CM;
+    rowValue: RV;
     rowMeta: RowMeta<unknown>;
     rowsCount: number;
     cell: WithBoundArgs<typeof EmberTableCell, 'api'>;
 }
-export interface TableRowSignature {
+export interface TableRowSignature<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> {
     Args: {
         tableClasses?: string;
-        api: RowApi;
+        api: RowApi<CV, RV, M, CM, RM, TM>;
         /**
          * An action that is called when a row is clicked. Will be called with the row and the event.
          */
@@ -65,23 +73,46 @@ export interface TableRowSignature {
     Blocks: {
         default: [
             {
-                api: RowApi;
-                cellValue: RowApi['cellValue'];
-                cellMeta: RowApi['cellMeta'];
-                columnValue: RowApi['columnValue'];
-                columnMeta: RowApi['columnMeta'];
-                rowValue: RowApi['rowValue'];
-                rowMeta: RowApi['rowMeta'];
-                rowsCount: RowApi['rowsCount'];
-                cell: WithBoundArgs<typeof EmberTableCell, 'api'>;
+                api: RowApi<CV, RV, M, CM, RM, TM>;
+                cellValue: GetOrElse<RV, CV['valuePath'], never>;
+                cellMeta: M;
+                columnValue: CV;
+                columnMeta: CM;
+                rowValue: RV;
+                rowMeta: RM;
+                rowsCount: number;
+                cell: WithBoundArgs<typeof EmberTableCell<CV, RV, M, CM, RM, TM>, 'api'>;
             }
         ];
     };
     Element: HTMLTableRowElement;
 }
 
-type TableRowArgs = TableRowSignature['Args'];
-export default interface EmberTableRow extends TableRowArgs {}
+type TableRowArgs<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> = TableRowSignature<CV, RV, M, CM, RM, TM>['Args'];
+export default interface EmberTableRow<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> extends TableRowArgs<CV, RV, M, CM, RM, TM> {}
 // eslint-disable-next-line ember/require-tagless-components
-export default class EmberTableRow extends Component<TableRowSignature> {}
-// }
+export default class EmberTableRow<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> extends Component<
+    TableRowSignature<CV, RV, M, CM, RM, TM>
+    // eslint-disable-next-line ember/require-tagless-components
+> {}

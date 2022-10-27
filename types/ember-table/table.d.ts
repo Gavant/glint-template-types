@@ -1,6 +1,7 @@
-// declare module 'ember-table/components/ember-table/component' {
-// eslint-disable-next-line ember/no-classic-components
+
 import Component from '@ember/component';
+
+import { GetOrElse } from '@gavant/glint-template-types/utils/types';
 
 import { ComponentLike, WithBoundArgs } from '@glint/template';
 
@@ -35,47 +36,48 @@ export enum WidthConstraint {
 }
 
 export type TableMeta<M> = { [P in keyof M]: M[P] };
-type HeaderCellComponent = ComponentLike<{
+
+type CellChildArgs<CV, CM, TM> = {
+    columnValue: CV;
+    columnMeta: CM;
+    tableMeta: TM;
+};
+
+type HeaderCellComponent<CV, CM, TM> = ComponentLike<{
+    Args: CellChildArgs<CV, CM, TM>;
+}>;
+
+type BodyCellComponent<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> = ComponentLike<{
     Args: {
-        columnValue: any;
-        columnMeta: any;
-        tableMeta: any;
-    };
-    Blocks: {
-        default: [];
+        cellValue: GetOrElse<RV, CV['valuePath'], never>;
+        columnValue: CV;
+        rowValue: RV;
+        cellMeta: M;
+        columnMeta: CM;
+        rowMeta: RM;
+        tableMeta: TM;
     };
 }>;
 
-type BodyCellComponent = ComponentLike<{
-    Args: {
-        cellValue: any;
-        columnValue: any;
-        rowValue: any;
-        cellMeta: any;
-        columnMeta: any;
-        rowMeta: any;
-        tableMeta: any;
-    };
-    Blocks: {
-        default: [];
-    };
-}>;
-
-type FooterCellComponent = BodyCellComponent;
-
-export interface Column {
-    [key: string]: unknown;
+export interface Column<RV extends RowValue, M, CM extends ColumnMeta, RM, TM> {
+    [key: string]: any;
     valuePath?: string;
-    name?: string;
+    name: string;
     width?: number;
     minWidth?: number;
     maxWidth?: number;
     textAlign?: string;
     isSortable?: boolean;
-    headerComponent?: HeaderCellComponent;
-    cellComponent?: BodyCellComponent;
-    footerComponent?: FooterCellComponent;
-    subcolumns?: Column[];
+    headerComponent?: HeaderCellComponent<Column<RV, M, CM, RM, TM>, CM, TM>;
+    cellComponent?: BodyCellComponent<Column<RV, M, CM, RM, TM>, RV, M, CM, RM, TM>;
+    subcolumns?: Column<RV, M, CM, RM, TM>[];
     footerValuePath?: string;
 }
 
@@ -95,23 +97,40 @@ export interface ColumnMeta {
     readonly isSorted: boolean;
     readonly isSortedAsc: boolean;
     readonly sortIndex: number;
+    readonly selected: boolean;
 }
 
-export interface TableApi {
-    columns: Column[];
+export type RowValue = { [foo: string]: any | never };
+
+export interface TableApi<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> {
+    columns: CV[];
     registerColumnTree: (columnTree: any) => void;
     columnTree: any;
     tableId: string;
 }
-export interface EmberTableSignature {
+export interface EmberTableSignature<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> {
     Args: Record<string, unknown>;
     Blocks: {
         default: [
             {
-                api: any;
-                head: WithBoundArgs<typeof EmberTableHeader, 'api'>;
-                body: WithBoundArgs<typeof EmberTableBody, 'api'>;
-                foot: WithBoundArgs<typeof EmberTableFooter, 'api'>;
+                api: TableApi<CV, RV, M, CM, RM, TM>;
+                head: WithBoundArgs<typeof EmberTableHeader<CV, RV, M, CM, RM, TM>, 'api'>;
+                body: WithBoundArgs<typeof EmberTableBody<CV, RV, M, CM, RM, TM>, 'api'>;
+                foot: WithBoundArgs<typeof EmberTableFooter<CV, RV, M, CM, RM, TM>, 'api'>;
                 loadingMore: WithBoundArgs<typeof EmberTableLoadingMore, 'api'>;
             }
         ];
@@ -120,17 +139,38 @@ export interface EmberTableSignature {
     Element: HTMLDivElement;
 }
 
-type EmberTableArgs = EmberTableSignature['Args'];
+type EmberTableArgs<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> = EmberTableSignature<CV, RV, M, CM, RM, TM>['Args'];
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
-export default interface EmberTable<T> extends EmberTableArgs {}
+export default interface EmberTable<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> extends EmberTableArgs<CV, RV, M, CM, RM, TM> {}
 
-// eslint-disable-next-line ember/require-tagless-components
-export default class EmberTable<T extends EmberTableSignature> extends Component<T> {
+export default class EmberTable<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+
+    // eslint-disable-next-line ember/require-tagless-components
+> extends Component<EmberTableSignature<CV, RV, M, CM, RM, TM>> {
     elementId: string;
 
-    api: TableApi;
+    api: TableApi<CV, RV, M, CM, RM, TM>;
 }
-// }
 
 declare module '@gavant/ember-table/-private/sticky/legacy-sticky-polyfill';
 declare module '@gavant/ember-table/-private/sticky/table-sticky-polyfill';
