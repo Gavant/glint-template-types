@@ -12,3 +12,5 @@ export type SignatureWithPositionedArg<S, K extends keyof ExpandSignature<S>['Ar
 };
 
 export type SafeString = ReturnType<typeof htmlSafe>;
+
+export type GetOrElse<Obj, K, Fallback> = K extends keyof Obj ? Obj[K] : Fallback;

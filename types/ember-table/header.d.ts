@@ -1,26 +1,31 @@
-// declare module 'ember-table/components/ember-thead/component' {
-// eslint-disable-next-line ember/no-classic-components
 import Component from '@ember/component';
 
 import { WithBoundArgs } from '@glint/template';
 
 import EmberTableCell from './cell';
 import EmberTableRow from './row';
-import { Column, FillMode, ResizeMode, TableMeta, WidthConstraint } from './table';
+import { Column, ColumnMeta, FillMode, ResizeMode, RowValue, TableApi, TableMeta, WidthConstraint } from './table';
 
 export interface TableSort {
     valuePath: string;
     isAscending: boolean;
 }
-export interface THeadArgs<TM> {
-    api: any;
+export interface THeadArgs<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> {
+    api: TableApi<CV, RV, M, CM, RM, TM>;
     /**
      * The column definitions for the table
      *
-     * @type {NativeArray<ColumnValue>}
+     * @type {NativeArray<CV>}
      * @memberof THeadArgs
      */
-    columns: Column[];
+    columns: CV[];
 
     /**
      * An ordered array of the sorts applied to the table
@@ -147,8 +152,8 @@ export interface THeadArgs<TM> {
      * @memberof THeadArgs
      */
     sortFunction?: (
-        itemA: Column,
-        itemB: Column,
+        itemA: CV,
+        itemB: CV,
         sorts: TableSort[],
         compare: <T>(valueA: T, valueB: T, sortEmptyLast: boolean) => number,
         sortEmptyLast: boolean
@@ -179,24 +184,52 @@ export interface THeadArgs<TM> {
     widthConstraint?: WidthConstraint;
 }
 
-export interface EmberTableHeaderSignature {
-    Args: THeadArgs<any>;
+export interface EmberTableHeaderSignature<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> {
+    Args: THeadArgs<CV, RV, M, CM, RM, TM>;
     Blocks: {
         default: [
             {
-                cells: EmberTableCell[];
+                cells: Array<typeof EmberTableCell<CV, RV, M, CM, RM, TM>>;
                 isHeader: boolean;
                 rowsCount: number;
-                row: WithBoundArgs<typeof EmberTableRow, 'api'>;
+                row: WithBoundArgs<typeof EmberTableRow<CV, RV, M, CM, RM, TM>, 'api'>;
             }
         ];
     };
     Element: HTMLDivElement;
 }
 
-type EmberTableHeaderArgs = EmberTableHeaderSignature['Args'];
+type EmberTableHeaderArgs<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> = EmberTableHeaderSignature<CV, RV, M, CM, RM, TM>['Args'];
 
-export default interface EmberTableHeader extends EmberTableHeaderArgs {}
+export default interface EmberTableHeader<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> extends EmberTableHeaderArgs<CV, RV, M, CM, RM, TM> {}
 // eslint-disable-next-line ember/require-tagless-components
-export default class EmberTableHeader extends Component<EmberTableHeaderSignature> {}
-// }
+export default class EmberTableHeader<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+    // eslint-disable-next-line ember/require-tagless-components
+> extends Component<EmberTableHeaderSignature<CV, RV, M, CM, RM, TM>> {}
