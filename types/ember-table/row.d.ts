@@ -1,4 +1,3 @@
-
 import Component from '@ember/component';
 
 import { GetOrElse } from '@gavant/glint-template-types/utils/types';

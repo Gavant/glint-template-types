@@ -1,4 +1,3 @@
-
 import Component from '@ember/component';
 
 import { GetOrElse } from '@gavant/glint-template-types/utils/types';
@@ -102,14 +101,7 @@ export interface ColumnMeta {
 
 export type RowValue = { [foo: string]: any | never };
 
-export interface TableApi<
-    CV extends Column<RV, M, CM, RM, TM>,
-    RV extends RowValue,
-    M,
-    CM extends ColumnMeta,
-    RM,
-    TM
-> {
+export interface TableApi<CV extends Column<RV, M, CM, RM, TM>, RV extends RowValue, M, CM extends ColumnMeta, RM, TM> {
     columns: CV[];
     registerColumnTree: (columnTree: any) => void;
     columnTree: any;
