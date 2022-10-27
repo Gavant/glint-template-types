@@ -66,9 +66,9 @@ type BodyCellComponent<
 }>;
 
 export interface Column<RV extends RowValue, M, CM extends ColumnMeta, RM, TM> {
-    [key: string]: any;
+    [key: string]: unknown;
     valuePath?: string;
-    name: string;
+    name?: string;
     width?: number;
     minWidth?: number;
     maxWidth?: number;
