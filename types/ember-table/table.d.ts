@@ -36,11 +36,11 @@ export enum WidthConstraint {
 
 export type TableMeta<M> = { [P in keyof M]: M[P] };
 
-type CellValue<R extends RowValue, C extends Column<R, any, any, any, any>> = {
+export type CellValue<R extends RowValue, C extends Column<R, any, any, any, any>> = {
     cellValue: GetOrElse<R, C['valuePath'], never>;
 };
 
-type HeaderCellArgs<CV, CM, TM> = {
+export type HeaderCellArgs<CV, CM, TM> = {
     columnValue: CV;
     columnMeta: CM;
     tableMeta: TM;
@@ -50,7 +50,14 @@ type HeaderCellComponent<CV, CM, TM> = ComponentLike<{
     Args: HeaderCellArgs<CV, CM, TM>;
 }>;
 
-type BodyCellArgs<CV extends Column<RV, M, CM, RM, TM>, RV extends RowValue, M, CM extends ColumnMeta, RM, TM> = {
+export type BodyCellArgs<
+    CV extends Column<RV, M, CM, RM, TM>,
+    RV extends RowValue,
+    M,
+    CM extends ColumnMeta,
+    RM,
+    TM
+> = {
     columnValue: CV;
     rowValue: RV;
     cellMeta: M;
