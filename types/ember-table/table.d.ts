@@ -36,15 +36,28 @@ export enum WidthConstraint {
 
 export type TableMeta<M> = { [P in keyof M]: M[P] };
 
-type CellChildArgs<CV, CM, TM> = {
+type CellValue<R extends RowValue, C extends Column<R, any, any, any, any>> = {
+    cellValue: GetOrElse<R, C['valuePath'], never>;
+};
+
+type HeaderCellArgs<CV, CM, TM> = {
     columnValue: CV;
     columnMeta: CM;
     tableMeta: TM;
 };
 
 type HeaderCellComponent<CV, CM, TM> = ComponentLike<{
-    Args: CellChildArgs<CV, CM, TM>;
+    Args: HeaderCellArgs<CV, CM, TM>;
 }>;
+
+type BodyCellArgs<CV extends Column<RV, M, CM, RM, TM>, RV extends RowValue, M, CM extends ColumnMeta, RM, TM> = {
+    columnValue: CV;
+    rowValue: RV;
+    cellMeta: M;
+    columnMeta: CM;
+    rowMeta: RM;
+    tableMeta: TM;
+} & CellValue<RV, CV>;
 
 type BodyCellComponent<
     CV extends Column<RV, M, CM, RM, TM>,
@@ -54,15 +67,7 @@ type BodyCellComponent<
     RM,
     TM
 > = ComponentLike<{
-    Args: {
-        cellValue: GetOrElse<RV, CV['valuePath'], never>;
-        columnValue: CV;
-        rowValue: RV;
-        cellMeta: M;
-        columnMeta: CM;
-        rowMeta: RM;
-        tableMeta: TM;
-    };
+    Args: BodyCellArgs<CV, RV, M, CM, RM, TM>;
 }>;
 
 export interface Column<RV extends RowValue, M, CM extends ColumnMeta, RM, TM> {
