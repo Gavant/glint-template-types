@@ -86,8 +86,8 @@ export interface Column<RV extends RowValue, M, CM extends ColumnMeta, RM, TM> {
     maxWidth?: number;
     textAlign?: string;
     isSortable?: boolean;
-    headerComponent?: HeaderCellComponent<Column<RV, M, CM, RM, TM>, CM, TM>;
-    cellComponent?: BodyCellComponent<Column<RV, M, CM, RM, TM>, RV, M, CM, RM, TM>;
+    headerComponent?: string;
+    cellComponent?: string;
     subcolumns?: Column<RV, M, CM, RM, TM>[];
     footerValuePath?: string;
 }
