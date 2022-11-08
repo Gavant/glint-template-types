@@ -40,6 +40,7 @@ export interface PowerSelectArgs<O> {
     allowClear?: boolean;
     ariaLabel?: string;
     ariaLabelledBy?: string;
+    disabled?: boolean;
     highlightOnHover?: boolean;
     placeholderComponent?: string;
     placeholder?: string;
@@ -62,6 +63,7 @@ export interface PowerSelectArgs<O> {
     searchPlaceholder?: string;
     loadingMessage?: string;
     selectedItemComponent?: string;
+    renderInPlace?: boolean;
     extra?: any;
     matcher?: MatcherFn;
     initiallyOpened?: boolean;
