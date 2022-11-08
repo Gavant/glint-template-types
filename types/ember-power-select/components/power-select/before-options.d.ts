@@ -1,17 +1,19 @@
-import { Select } from 'ember-power-select/addon/components/power-select';
+import Component from '@glimmer/component';
 
-import { PowerSelectArgs } from '@gavant/glint-template-types/types/ember-power-select/power-select';
+import PowerSelect, { PowerSelectArgs, Select } from '../power-select';
 
-declare module 'ember-power-select/components/power-select/before-options' {
-    export type PowerSelectBeforeOptionsArgs<T, E> = Pick<
-        PowerSelectArgs<T, E>,
-        'searchEnabled' | 'placeholder' | 'extra' | 'selectedItemComponent' | 'searchPlaceholder'
-    > & {
-        listboxId: string;
-        select: Select;
-        onFocus: (event: Event) => void;
-        onBlur: (select: Select, event: Event) => void;
-        onInput: (event: Event) => void;
-        onKeydown: (event: Event) => boolean;
-    };
+interface Args<O>
+    extends Pick<
+            PowerSelectArgs<O>,
+            'searchEnabled' | 'searchPlaceholder' | 'ariaLabel' | 'ariaLabelledBy' | 'onInput' | 'onFocus' | 'onBlur'
+        >,
+        Pick<PowerSelect<O>, 'ariaActiveDescendant' | 'listboxId'> {
+    select: Select;
+    onKeydown: (e: Event) => false | void;
+    autofocus?: boolean;
 }
+export interface BeforeOptionsSignature<O> {
+    Args: Args<O>;
+}
+
+export default class BeforeOptions<O> extends Component<BeforeOptionsSignature<O>> {}

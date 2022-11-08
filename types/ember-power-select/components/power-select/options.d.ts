@@ -1,28 +1,20 @@
 import Component from '@glimmer/component';
-import { Select } from 'ember-power-select/addon/components/power-select';
-import { PowerSelectAPI } from 'ember-power-select/types/power-select-api';
 
-import { PowerSelectArgs } from '@gavant/glint-template-types/types/ember-power-select/power-select';
+import { PowerSelectArgs, Select } from '../power-select';
 
-declare module 'ember-power-select/components/power-select/options' {
-    export type PowerSelectOptionsArgs<T, E> = Pick<
-        PowerSelectArgs<T, E>,
-        'loadingMessage' | 'options' | 'optionsComponent' | 'extra' | 'highlightOnHover' | 'groupComponent'
-    > & {
-        groupIndex?: '';
-        listboxId: string;
-        select: Select;
-        extra: E;
-    };
-
-    export interface PowerSelectOptionsSignature<T, E> {
-        Element: HTMLUListElement;
-        Args: PowerSelectOptionsArgs<T, E>;
-        Blocks: {
-            default: [T, PowerSelectAPI<T>];
-        };
-    }
-    export default class OptionsComponent<T, E> extends Component<PowerSelectOptionsSignature<T, E>> {
-        addHandlers: () => void;
-    }
+interface PowerSelectOptionsArgs<O>
+    extends Pick<PowerSelectArgs<O>, 'loadingMessage' | 'groupComponent' | 'optionsComponent' | 'options' | 'extra'> {
+    select: Select;
+    highlightOnHover?: boolean;
+    options: O[];
+    groupIndex: '';
 }
+
+export interface PowerSelectOptionsSignature<O> {
+    Args: PowerSelectOptionsArgs<O>;
+    Blocks: {
+        default?: [O, Select];
+    };
+    Element: HTMLUListElement;
+}
+export default class Options<O> extends Component<PowerSelectOptionsSignature<O>> {}

@@ -1,15 +1,11 @@
 import Component from '@glimmer/component';
 
-import { Dropdown } from 'ember-basic-dropdown/addon/components/basic-dropdown';
+import { Dropdown, RepositionChanges } from './basic-dropdown';
 
-export interface DropdownTriggerArgs {
+interface Args {
     dropdown: Dropdown;
     eventType: 'click' | 'mousedown';
     stopPropagation: boolean;
-    hPosition: string;
-    renderInPlace: boolean;
-    vPosition: string;
-    htmlTag?: string;
     onBlur?: (dropdown?: Dropdown, event?: FocusEvent) => void;
     onClick?: (dropdown?: Dropdown, event?: MouseEvent) => void;
     onFocus?: (dropdown?: Dropdown, event?: FocusEvent) => void;
@@ -20,15 +16,17 @@ export interface DropdownTriggerArgs {
     onMouseEnter?: (dropdown?: Dropdown, event?: MouseEvent) => void;
     onMouseLeave?: (dropdown?: Dropdown, event?: MouseEvent) => void;
     onTouchEnd?: (dropdown?: Dropdown, event?: TouchEvent) => void;
+    hPosition: RepositionChanges['hPosition'];
+    vPosition: RepositionChanges['vPosition'];
+    renderInPlace: boolean;
 }
 
 export interface DropdownTriggerSignature {
     Element: HTMLElement;
-    Args: DropdownTriggerArgs;
+    Args: Args;
     Blocks: {
         default: [];
     };
 }
 
-export class DropdownTrigger extends Component<DropdownTriggerSignature> {}
-export default DropdownTrigger;
+export default class BasicDropdownTrigger extends Component<DropdownTriggerSignature> {}
