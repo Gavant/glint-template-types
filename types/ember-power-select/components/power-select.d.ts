@@ -49,7 +49,7 @@ export interface PowerSelectArgs<O> {
     noMatchesMessageComponent?: string;
     matchTriggerWidth?: boolean;
     options: O[] | PromiseProxy<O[]>;
-    selected: O | PromiseProxy<O>;
+    selected?: O | PromiseProxy<O> | null;
     closeOnSelect?: boolean;
     defaultHighlighted?: any;
     searchField?: string;
