@@ -4349,10 +4349,10 @@ ember-basic-dropdown@5.0.0:
     ember-style-modifier "^0.7.0"
     ember-truth-helpers "^2.1.0 || ^3.0.0"
 
-ember-basic-dropdown@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/ember-basic-dropdown/-/ember-basic-dropdown-6.0.0.tgz#81407cba1df022750acc58d91dfd45251be8f1e3"
-  integrity sha512-DWdHItyTJqgrejvMzRQCexcoh8yO6+y+rvByB89ej8gAEEFOJ9ziLx7KgZ8bDs8woVOkwyohdbPbfKcasuaxJA==
+ember-basic-dropdown@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/ember-basic-dropdown/-/ember-basic-dropdown-6.0.1.tgz#9844b8b263033c916e193fb15b91517a00192db0"
+  integrity sha512-8cmqHvho7fToAv2pauzLd3y9fUVtMu0+eBwsevjiuTdWUPLvkIvn745NbT5aempVmxfMq0oQLhjzK8VUd4gxaw==
   dependencies:
     "@ember/render-modifiers" "^2.0.4"
     "@embroider/macros" "^1.2.0"
@@ -4363,7 +4363,7 @@ ember-basic-dropdown@^6.0.0:
     ember-cli-htmlbars "^6.0.1"
     ember-cli-typescript "^4.2.1"
     ember-element-helper "^0.6.0"
-    ember-get-config "^1.0.2"
+    ember-get-config "^1.0.2 || ^2.0.0"
     ember-maybe-in-element "^2.0.3"
     ember-modifier "^3.2.7"
     ember-style-modifier "^0.8.0"
@@ -4801,6 +4801,14 @@ ember-destroyable-polyfill@^2.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/ember-get-config/-/ember-get-config-1.0.4.tgz#e8c36b0937767ead32e16d157fabd8178c542587"
   integrity sha512-WOnf1E0ceRHWy7apnmUFbKcJm2c3KOg4rNNUKNtBFCFp770tOTwv5LAYcqV4+HootPCsQYL7oFUd/0JLiZpMeg==
+  dependencies:
+    "@embroider/macros" "^0.50.0 || ^1.0.0"
+    ember-cli-babel "^7.26.6"
+
+"ember-get-config@^1.0.2 || ^2.0.0":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/ember-get-config/-/ember-get-config-2.1.1.tgz#bede76c25d95dbefab8d30064abf7aa00bc19235"
+  integrity sha512-uNmv1cPG/4qsac8oIf5txJ2FZ8p88LEpG4P3dNcjsJS98Y8hd0GPMFwVqpnzI78Lz7VYRGQWY4jnE4qm5R3j4g==
   dependencies:
     "@embroider/macros" "^0.50.0 || ^1.0.0"
     ember-cli-babel "^7.26.6"

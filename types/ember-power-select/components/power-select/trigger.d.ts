@@ -1,25 +1,19 @@
-import { Select } from 'ember-power-select/addon/components/power-select';
+import Component from '@glimmer/component';
 
-import { PowerSelectArgs } from '@gavant/glint-template-types/types/ember-power-select/power-select';
+import { PowerSelectArgs, Select } from '../power-select';
 
-declare module 'ember-power-select/components/power-select/trigger' {
-    export type PowerSelectTriggerArgs<T, E> = Pick<
-        PowerSelectArgs<T, E>,
-        | 'allowClear'
-        | 'buildSelection'
-        | 'loadingMessage'
-        | 'selectedItemComponent'
-        | 'searchEnabled'
-        | 'searchField'
-        | 'extra'
-        | 'placeholder'
-        | 'placeholderComponent'
-    > & {
-        listboxId: string;
-        select: Select;
-        onFocus: (event: Event) => void;
-        onBlur: (select: Select, event: Event) => void;
-        onInput: (event: Event) => void;
-        onKeydown: (event: Event) => boolean;
+interface Args<O>
+    extends Pick<
+        PowerSelectArgs<O>,
+        'selectedItemComponent' | 'extra' | 'allowClear' | 'placeholderComponent' | 'placeholder'
+    > {
+    select: Select;
+}
+
+export interface TriggerSignature<O> {
+    Args: Args<O>;
+    Blocks: {
+        default: [O, Select];
     };
 }
+export default class Trigger<O> extends Component<TriggerSignature<O>> {}

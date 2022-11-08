@@ -1,14 +1,26 @@
+import { action } from '@ember/object';
 import Component from '@glimmer/component';
-
-import { DropdownActions } from 'ember-basic-dropdown/addon/components/basic-dropdown';
-import { CalculatePosition } from 'ember-basic-dropdown/addon/utils/calculate-position';
-
-import { DropdownContent } from '@gavant/glint-template-types/types/ember-basic-dropdown/content';
-import { DropdownTrigger } from '@gavant/glint-template-types/types/ember-basic-dropdown/trigger';
 
 import { WithBoundArgs } from '@glint/template';
 
-export interface DropdownArgs {
+import { CalculatePosition } from '../utils/calculate-position';
+import DropdownContent from './basic-dropdown-content';
+import DropdownTrigger from './basic-dropdown-trigger';
+
+export interface DropdownActions {
+    toggle: (e?: Event) => void;
+    close: (e?: Event, skipFocus?: boolean) => void;
+    open: (e?: Event) => void;
+    reposition: (...args: any[]) => undefined | RepositionChanges;
+}
+export interface Dropdown {
+    uniqueId: string;
+    disabled: boolean;
+    isOpen: boolean;
+    actions: DropdownActions;
+}
+
+interface Args {
     initiallyOpened?: boolean;
     renderInPlace?: boolean;
     verticalPosition?: string;
@@ -24,9 +36,20 @@ export interface DropdownArgs {
     calculatePosition?: CalculatePosition;
 }
 
-export interface DropdownSignature {
+type RepositionChanges = {
+    hPosition: string;
+    vPosition: string;
+    otherStyles: Record<string, string | number | undefined>;
+    top?: string;
+    left?: string;
+    right?: string;
+    width?: string;
+    height?: string;
+};
+
+export interface BasicDropdownSignature {
     Element: HTMLDivElement;
-    Args: DropdownArgs;
+    Args: Args;
     Blocks: {
         default: [
             {
@@ -59,5 +82,4 @@ export interface DropdownSignature {
     };
 }
 
-export class Dropdown extends Component<DropdownSignature> {}
-export default Dropdown;
+export default class BasicDropdown extends Component<BasicDropdownSignature> {}
