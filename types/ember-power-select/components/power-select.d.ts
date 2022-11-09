@@ -49,7 +49,7 @@ export interface PowerSelectArgs<O> {
     defaultHighlighted?: any;
     destination?: string;
     disabled?: boolean;
-    dropdownClass?: string;    
+    dropdownClass?: string;
     eventType?: string;
     extra?: any;
     groupComponent?: string;
@@ -59,6 +59,7 @@ export interface PowerSelectArgs<O> {
     loadingMessage?: string;
     matchTriggerWidth?: boolean;
     noMatchesMessage?: string;
+    noMatchesMessageComponent?: string;
     options: O[] | PromiseProxy<O[]>;
     optionsComponent?: string;
     placeholder?: string;
