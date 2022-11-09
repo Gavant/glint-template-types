@@ -35,50 +35,61 @@ interface Arrayable<T> {
 interface Performable {
     perform: (...args: any[]) => void;
 }
-// Some args are not listed here because they are only accessed from the template. Should I list them?
 export interface PowerSelectArgs<O> {
+    afterOptionsComponent?: string;
     allowClear?: boolean;
+    ariaDescribedBy?: string;
+    ariaInvalid?: string;
     ariaLabel?: string;
     ariaLabelledBy?: string;
-    disabled?: boolean;
-    highlightOnHover?: boolean;
-    placeholderComponent?: string;
-    placeholder?: string;
-    searchMessage?: string;
-    searchMessageComponent?: string;
-    noMatchesMessage?: string;
-    noMatchesMessageComponent?: string;
-    matchTriggerWidth?: boolean;
-    options: O[] | PromiseProxy<O[]>;
-    selected?: O | PromiseProxy<O> | null;
+    beforeOptionsComponent?: string;
     closeOnSelect?: boolean;
     defaultHighlighted?: any;
-    searchField?: string;
-    searchEnabled?: boolean;
-    tabindex?: number | string;
-    triggerComponent?: string;
-    beforeOptionsComponent?: string;
-    optionsComponent?: string;
-    groupComponent?: string;
-    searchPlaceholder?: string;
-    loadingMessage?: string;
-    selectedItemComponent?: string;
-    renderInPlace?: boolean;
+    destination?: string;
+    disabled?: boolean;
+    dropdownClass?: string;
+    eventType?: string;
     extra?: any;
-    matcher?: MatcherFn;
+    groupComponent?: string;
+    highlightOnHover?: boolean;
+    horizontalPosition?: 'auto' | 'left' | 'right' | 'center';
     initiallyOpened?: boolean;
-    typeAheadOptionMatcher?: MatcherFn;
+    loadingMessage?: string;
+    matchTriggerWidth?: boolean;
+    noMatchesMessage?: string;
+    noMatchesMessageComponent?: string;
+    options: O[] | PromiseProxy<O[]>;
+    optionsComponent?: string;
+    placeholder?: string;
+    placeholderComponent?: string;
+    preventScroll?: boolean;
+    renderInPlace?: boolean;
+    searchEnabled?: boolean;
+    searchField?: string;
+    searchMessage?: string;
+    searchPlaceholder?: string;
+    selected?: O | PromiseProxy<O> | null;
+    selectedItemComponent?: string;
+    tabindex?: string;
+    triggerClass?: string;
+    triggerComponent?: string;
+    triggerId?: string;
+    triggerRole?: string;
+    verticalPosition?: 'auto' | 'above' | 'below';
+
     buildSelection?: (selected: O, select: Select) => any;
+    matcher?: MatcherFn;
+    onBlur?: (select: Select, event: FocusEvent) => void;
     onChange: (selection: O, select: Select, event?: Event) => void;
-    search?: (term: string, select: Select) => O[] | PromiseProxy<O[]>;
-    onOpen?: (select: Select, e: Event) => boolean | undefined;
     onClose?: (select: Select, e: Event) => boolean | undefined;
+    onFocus?: (select: Select, event: FocusEvent) => void;
     onInput?: (term: string, select: Select, e: Event) => string | false | void;
     onKeydown?: (select: Select, e: KeyboardEvent) => boolean | undefined;
-    onFocus?: (select: Select, event: FocusEvent) => void;
-    onBlur?: (select: Select, event: FocusEvent) => void;
-    scrollTo?: (option: O, select: Select) => void;
+    onOpen?: (select: Select, e: Event) => boolean | undefined;
     registerAPI?: (select: Select) => void;
+    scrollTo?: (option: O, select: Select) => void;
+    search?: (term: string, select: Select) => O[] | PromiseProxy<O[]>;
+    typeAheadMatcher?: MatcherFn;
 }
 
 export interface PowerSelectSignature<O> {

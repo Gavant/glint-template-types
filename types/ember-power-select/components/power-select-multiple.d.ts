@@ -3,6 +3,7 @@ import Component from '@glimmer/component';
 import { PowerSelectArgs, PromiseProxy, Select } from './power-select';
 
 interface PowerSelectMultipleArgs<O> extends Omit<PowerSelectArgs<O>, 'selected'> {
+    animationEnabled?: boolean;
     selected?: O[] | PromiseProxy<O[]>;
 }
 export interface PowerSelectMultipleSignature<O> {
