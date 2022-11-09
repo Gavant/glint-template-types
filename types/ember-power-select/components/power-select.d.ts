@@ -38,13 +38,11 @@ interface Performable {
 export interface PowerSelectArgs<O> {
     afterOptionsComponent?: string;
     allowClear?: boolean;
-    animationEnabled?: boolean;
     ariaDescribedBy?: string;
     ariaInvalid?: string;
     ariaLabel?: string;
     ariaLabelledBy?: string;
     beforeOptionsComponent?: string;
-    class?: string;
     closeOnSelect?: boolean;
     defaultHighlighted?: any;
     destination?: string;
