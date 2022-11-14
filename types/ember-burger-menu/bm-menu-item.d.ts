@@ -1,16 +1,17 @@
-import ArrayProxy from '@ember/array/proxy';
+declare module 'ember-burger-menu/components/bm-menu-item' {
+    import ArrayProxy from '@ember/array/proxy';
+    import Component from '@ember/component';
 
-import Component from '@ember/component';
+    import { BurgerMenuState } from 'ember-burger-menu/components/burger-menu';
 
-import { BurgerMenuState } from '@gavant/glint-template-types/types/ember-burger-menu/burger-menu';
+    export interface BmMenuItemComponentSignature {
+        Args: {
+            tagName: string;
+            readonly menuItems?: ArrayProxy<BmMenuItem>;
+            dismissOnClick?: boolean;
+            state: BurgerMenuState;
+        };
+    }
 
-export interface BmMenuItemComponentSignature {
-    Args: {
-        tagName: string;
-        readonly menuItems?: ArrayProxy<BmMenuItem>;
-        dismissOnClick?: boolean;
-        state: BurgerMenuState;
-    };
+    export default class BmMenuItem extends Component<BmMenuItemComponentSignature> {}
 }
-
-export default class BmMenuItem extends Component<BmMenuItemComponentSignature> {}

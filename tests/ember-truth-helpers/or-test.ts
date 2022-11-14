@@ -1,5 +1,7 @@
-import OrHelper from '@gavant/glint-template-types/types/ember-truth-helpers/or';
+import OrHelper from 'ember-truth-helpers/helpers/or';
+
 import { expectTypeOf } from 'expect-type';
+
 import { ReturnOf } from '../util';
 
 // if number is 0, we'll eventually end up on string, it may be empty but we'll get it either way

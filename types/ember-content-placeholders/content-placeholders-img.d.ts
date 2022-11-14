@@ -1,14 +1,16 @@
-import Component from '@ember/component';
+declare module 'ember-content-placeholders/components/content-placeholders-img' {
+    import Component from '@ember/component';
 
-interface ContentPlaceholdersImgSignature {
-    Args: {
-        rounded?: boolean;
-        centered?: boolean;
-        animated?: boolean;
-    };
-    Blocks: {
-        default: [];
-    };
+    interface ContentPlaceholdersImgSignature {
+        Args: {
+            rounded?: boolean;
+            centered?: boolean;
+            animated?: boolean;
+        };
+        Blocks: {
+            default: [];
+        };
+    }
+
+    export default class ContentPlaceholdersImg extends Component<ContentPlaceholdersImgSignature> {}
 }
-
-export default class ContentPlaceholdersImg extends Component<ContentPlaceholdersImgSignature> {}

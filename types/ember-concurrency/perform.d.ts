@@ -1,30 +1,34 @@
-import Helper from '@ember/component/helper';
-import { Task } from 'ember-concurrency';
+declare module 'ember-concurrency/helpers/perform' {
+    import Helper from '@ember/component/helper';
 
-type PrefixOf<T extends unknown[]> = T extends []
-    ? []
-    : unknown[] extends T
-    ? unknown[]
-    : T extends [head: infer Head, ...tail: infer Tail]
-    ? [] | [Head, ...PrefixOf<Tail>]
-    : T extends [head?: infer Head, ...tail: infer Tail]
-    ? [Head?, ...PrefixOf<Tail>]
-    : [];
+    import { Task } from 'ember-concurrency';
 
-type TaskArgs<T extends Task<any, any>> = T extends Task<any, infer Args> ? Args : never;
-type TaskReturn<T extends Task<any, any>> = T extends Task<infer Return, any> ? Return : never;
+    type PrefixOf<T extends unknown[]> = T extends []
+        ? []
+        : unknown[] extends T
+        ? unknown[]
+        : T extends [head: infer Head, ...tail: infer Tail]
+        ? [] | [Head, ...PrefixOf<Tail>]
+        : T extends [head?: infer Head, ...tail: infer Tail]
+        ? [Head?, ...PrefixOf<Tail>]
+        : [];
 
-type RemovePrefix<Prefix extends unknown[], Tuple extends unknown[]> = [] extends Prefix
-    ? Tuple
-    : [Prefix, Tuple] extends [[any?, ...infer PrefixRest], [any?, ...infer TupleRest]]
-    ? RemovePrefix<PrefixRest, TupleRest>
-    : [];
+    type TaskArgs<T extends Task<any, any>> = T extends Task<any, infer Args> ? Args : never;
+    type TaskReturn<T extends Task<any, any>> = T extends Task<infer Return, any> ? Return : never;
 
-type PerformHelperSignature<T extends Task<any, any>, GivenArgs extends PrefixOf<TaskArgs<T>>> = {
-    Args: { Positional: [T, ...GivenArgs] };
-    Return: (...params: RemovePrefix<GivenArgs, TaskArgs<T>>) => Promise<TaskReturn<T>>;
-};
+    type RemovePrefix<Prefix extends unknown[], Tuple extends unknown[]> = [] extends Prefix
+        ? Tuple
+        : [Prefix, Tuple] extends [[any?, ...infer PrefixRest], [any?, ...infer TupleRest]]
+        ? RemovePrefix<PrefixRest, TupleRest>
+        : [];
 
-export default class PerformHelper<T extends Task<any, any>, PassedArgs extends PrefixOf<TaskArgs<T>>> extends Helper<
-    PerformHelperSignature<T, PassedArgs>
-> {}
+    type PerformHelperSignature<T extends Task<any, any>, GivenArgs extends PrefixOf<TaskArgs<T>>> = {
+        Args: { Positional: [T, ...GivenArgs] };
+        Return: (...params: RemovePrefix<GivenArgs, TaskArgs<T>>) => Promise<TaskReturn<T>>;
+    };
+
+    export default class PerformHelper<
+        T extends Task<any, any>,
+        PassedArgs extends PrefixOf<TaskArgs<T>>
+    > extends Helper<PerformHelperSignature<T, PassedArgs>> {}
+}

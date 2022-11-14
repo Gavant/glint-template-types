@@ -1,4 +1,6 @@
 import { RenderModifier as DidUpdateModifier } from './-private/shared';
 
-export { DidUpdateModifier };
-export default DidUpdateModifier;
+declare module 'ember-render-modifiers/modifiers/did-update' {
+    export { DidUpdateModifier };
+    export default DidUpdateModifier;
+}

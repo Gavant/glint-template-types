@@ -1,10 +1,11 @@
-import PerformHelper from '@gavant/glint-template-types/types/ember-concurrency/perform';
 import { resolve } from '@glint/environment-ember-loose/-private/dsl';
-import { expectTypeOf } from 'expect-type';
 import { task, timeout } from 'ember-concurrency';
-import { taskFor } from 'ember-concurrency-ts';
 import 'ember-concurrency-async';
+import { taskFor } from 'ember-concurrency-ts';
 import 'ember-concurrency-ts/async';
+import PerformHelper from 'ember-concurrency/helpers/perform';
+
+import { expectTypeOf } from 'expect-type';
 
 class TaskWrapper {
     @task

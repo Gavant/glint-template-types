@@ -1,14 +1,16 @@
-import Component from '@ember/component';
+declare module 'ember-content-placeholders/components/content-placeholders-nav' {
+    import Component from '@ember/component';
 
-interface ContentPlaceholdersNavArgs {
-    rounded?: boolean;
-    centered?: boolean;
-    animated?: boolean;
+    interface ContentPlaceholdersNavArgs {
+        rounded?: boolean;
+        centered?: boolean;
+        animated?: boolean;
+    }
+
+    interface ContentPlaceholdersNavSignature {
+        Args: ContentPlaceholdersNavArgs;
+    }
+
+    export default interface ContentPlaceholdersNav extends ContentPlaceholdersNavArgs {}
+    export default class ContentPlaceholdersNav extends Component<ContentPlaceholdersNavSignature> {}
 }
-
-interface ContentPlaceholdersNavSignature {
-    Args: ContentPlaceholdersNavArgs;
-}
-
-export default interface ContentPlaceholdersNav extends ContentPlaceholdersNavArgs {}
-export default class ContentPlaceholdersNav extends Component<ContentPlaceholdersNavSignature> {}

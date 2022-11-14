@@ -1,4 +1,6 @@
 import { RenderModifier as DidInsertModifier } from './-private/shared';
 
-export { DidInsertModifier };
-export default DidInsertModifier;
+declare module 'ember-render-modifiers/modifiers/did-insert' {
+    export { DidInsertModifier };
+    export default DidInsertModifier;
+}
