@@ -1,4 +1,6 @@
 import { RenderModifier as WillDestroyModifier } from './-private/shared';
 
-export { WillDestroyModifier };
-export default WillDestroyModifier;
+declare module 'ember-render-modifiers/modifiers/will-destroy' {
+    export { WillDestroyModifier };
+    export default WillDestroyModifier;
+}

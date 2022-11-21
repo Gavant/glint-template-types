@@ -1,3 +1,5 @@
-import { EqualityHelper as EqHelper } from './-private/shared';
+declare module 'ember-truth-helpers/helpers/eq' {
+    import { EqualityHelper as EqHelper } from '@gavant/glint-template-types/types/ember-truth-helpers/-private/shared';
 
-export default EqHelper;
+    export default EqHelper;
+}

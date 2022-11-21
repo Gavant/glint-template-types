@@ -1,3 +1,5 @@
-import Component from '@ember/component';
+declare module 'ember-animated/components/animated-orphans' {
+    import Component from '@ember/component';
 
-export default class AnimatedOrphans extends Component {}
+    export default class AnimatedOrphans extends Component {}
+}

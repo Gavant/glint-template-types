@@ -1,19 +1,21 @@
-import Component from '@glimmer/component';
+declare module 'ember-power-select/components/power-select/trigger' {
+    import Component from '@glimmer/component';
 
-import { PowerSelectArgs, Select } from '../power-select';
+    import { PowerSelectArgs, Select } from 'ember-power-select/components/power-select';
 
-interface Args<O>
-    extends Pick<
-        PowerSelectArgs<O>,
-        'selectedItemComponent' | 'extra' | 'allowClear' | 'placeholderComponent' | 'placeholder'
-    > {
-    select: Select;
+    interface Args<O>
+        extends Pick<
+            PowerSelectArgs<O>,
+            'selectedItemComponent' | 'extra' | 'allowClear' | 'placeholderComponent' | 'placeholder'
+        > {
+        select: Select;
+    }
+
+    export interface TriggerSignature<O> {
+        Args: Args<O>;
+        Blocks: {
+            default: [O, Select];
+        };
+    }
+    export default class Trigger<O> extends Component<TriggerSignature<O>> {}
 }
-
-export interface TriggerSignature<O> {
-    Args: Args<O>;
-    Blocks: {
-        default: [O, Select];
-    };
-}
-export default class Trigger<O> extends Component<TriggerSignature<O>> {}

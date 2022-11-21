@@ -40,6 +40,7 @@
         "ember-concurrency-async": "^1.0.0",
         "ember-concurrency-ts": "^0.3.0",
         "ember-data": "^4.4.0",
+        "ember-intl": "^5.7.2",
         "ember-modifier": "^3.2.7",
         "ember-power-select": "^5.0.0",
         "expect-type": "^0.13.0",

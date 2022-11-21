@@ -1,4 +1,5 @@
-import EqHelper from '@gavant/glint-template-types/types/ember-truth-helpers/eq';
+import EqHelper from 'ember-truth-helpers/helpers/eq';
+
 import { expectTypeOf } from 'expect-type';
 
 import { ReturnOf } from '../util';

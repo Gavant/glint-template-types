@@ -1,5 +1,6 @@
-import AnimatedContainer from '@gavant/glint-template-types/types/ember-animated/animated-container';
 import { emitComponent, resolve } from '@glint/environment-ember-loose/-private/dsl';
+import AnimatedContainer from 'ember-animated/components/animated-container';
+
 import { expectTypeOf } from 'expect-type';
 
 emitComponent(resolve(AnimatedContainer)({ tag: 'div' }));
