@@ -1,9 +1,9 @@
 declare module 'ember-basic-dropdown/components/basic-dropdown-content' {
-import Component from '@glimmer/component';
+    import Component from '@glimmer/component';
 
-import { Dropdown, RepositionChanges } from 'ember-basic-dropdown/components/basic-dropdown';
+    import { Dropdown, RepositionChanges } from 'ember-basic-dropdown/components/basic-dropdown';
 
-        interface Args {
+    interface Args {
         transitioningInClass?: string;
         transitionedInClass?: string;
         transitioningOutClass?: string;
