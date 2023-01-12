@@ -23,7 +23,7 @@ declare module 'ember-basic-dropdown/components/basic-dropdown-content' {
         onFocusOut?: (dropdown?: Dropdown, event?: FocusEvent) => void;
         onMouseEnter?: (dropdown?: Dropdown, event?: MouseEvent) => void;
         onMouseLeave?: (dropdown?: Dropdown, event?: MouseEvent) => void;
-        shouldReposition: (mutations: MutationRecord[], dropdown: Dropdown) => boolean;
+        shouldReposition?: (mutations: MutationRecord[], dropdown: Dropdown) => boolean;
         hPosition: RepositionChanges['hPosition'];
         vPosition: RepositionChanges['vPosition'];
     }
