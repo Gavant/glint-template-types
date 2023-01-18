@@ -8,13 +8,16 @@ This package contains types that are needed by glint (temporarily).
 
 # Use
 
-In order to use this, you must import the types from this package, and manually add them to the glint registry
+In order to use this, you must import the types from this package, and manually add them to the glint registry.
+This addon now uses ambient declarations so you need to add the following to your `tsconfig` "include":
+
+`"node_modules/@gavant/glint-template-types/types/**/*"`
 
 ```
-import FaIconComponent from '@gavant/glint-template-types/types/@fortawesome/ember-fontawesome/fa-icon';
-import DidInsertModifier from '@gavant/glint-template-types/types/ember-render-modifiers/did-insert';
+import FaIconComponent from '@fortawesome/ember-fontawesome/components/fa-icon';
+import DidInsertModifier from 'ember-render-modifiers/modifiers/did-insert';
 ...
-import DidUpdateModifier from '@gavant/glint-template-types/types/ember-render-modifiers/did-update';
+import DidUpdateModifier from 'ember-render-modifiers/modifiers/did-update';
 
 
 
