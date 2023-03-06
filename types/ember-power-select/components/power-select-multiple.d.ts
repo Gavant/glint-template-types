@@ -13,5 +13,5 @@ declare module 'ember-power-select/components/power-select-multiple' {
             default: [O, Select];
         };
     }
-    export default class PowerSelectMultiple<O> extends Component<PowerSelectMultipleArgs<O>> {}
+    export default class PowerSelectMultiple<O> extends Component<PowerSelectMultipleSignature<O>> {}
 }
