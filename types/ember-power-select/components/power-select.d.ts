@@ -62,6 +62,7 @@ declare module 'ember-power-select/components/power-select' {
         groupComponent?: string;
         searchPlaceholder?: string;
         loadingMessage?: string;
+        eventType: string;
         selectedItemComponent?: string;
         renderInPlace?: boolean;
         extra?: any;
