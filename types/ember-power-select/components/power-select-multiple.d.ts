@@ -8,10 +8,10 @@ declare module 'ember-power-select/components/power-select-multiple' {
     }
     export interface PowerSelectMultipleSignature<O> {
         Element: HTMLDivElement;
-        Args: PowerSelectArgs<O>;
+        Args: PowerSelectMultipleArgs<O>;
         Blocks: {
             default: [O, Select];
         };
     }
-    export default class PowerSelectMultiple<O> extends Component<PowerSelectMultipleArgs<O>> {}
+    export default class PowerSelectMultiple<O> extends Component<PowerSelectMultipleSignature<O>> {}
 }
