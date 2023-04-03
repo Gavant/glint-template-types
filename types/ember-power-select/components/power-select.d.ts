@@ -57,12 +57,13 @@ declare module 'ember-power-select/components/power-select' {
         searchEnabled?: boolean;
         tabindex?: number | string;
         triggerComponent?: string;
+        triggerId?: string
         beforeOptionsComponent?: string;
         optionsComponent?: string;
         groupComponent?: string;
         searchPlaceholder?: string;
         loadingMessage?: string;
-        eventType: string;
+        eventType?: string;
         selectedItemComponent?: string;
         renderInPlace?: boolean;
         extra?: any;
