@@ -14,6 +14,7 @@
     "keywords": [],
     "dependencies": {},
     "devDependencies": {
+        "@embroider/util": "^1.10.0",
         "@fortawesome/fontawesome-svg-core": "^1.2.35",
         "@gavant/ember-bootstrap-dropdown": "^2.0.0",
         "@gavant/ember-button-basic": "^2.0.0",

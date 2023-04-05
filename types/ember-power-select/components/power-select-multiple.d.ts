@@ -4,7 +4,7 @@ declare module 'ember-power-select/components/power-select-multiple' {
     import { PowerSelectArgs, PromiseProxy, Select } from 'ember-power-select/components/power-select';
 
     interface PowerSelectMultipleArgs<O> extends Omit<PowerSelectArgs<O>, 'selected'> {
-        selected?: O[] | PromiseProxy<O[]>;
+        selected?: O[] | Promise<O[]> | PromiseProxy<O[]>;
     }
     export interface PowerSelectMultipleSignature<O> {
         Element: HTMLDivElement;
