@@ -21,7 +21,9 @@ declare module '@fortawesome/ember-fontawesome/components/fa-icon' {
             pull?: PullProp;
             pulse?: boolean;
             border?: boolean;
+            listItem?: boolean;
             flip?: FlipProp;
+            spin?: boolean;
             fixedWidth?: boolean;
             transform?: Transform;
             symbol?: boolean;
