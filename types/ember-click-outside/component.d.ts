@@ -1,7 +1,7 @@
 declare module 'ember-click-outside/components/click-outside' {
     import Component from '@ember/component';
 
-    interface OnClickOutsideSignature<K extends keyof DocumentEventMap = 'click'> {
+    interface OnClickOutsideSignature<K extends keyof DocumentEventMap> {
         Args: {
             onClickOutside: (event: DocumentEventMap[K]) => void;
 
@@ -13,5 +13,7 @@ declare module 'ember-click-outside/components/click-outside' {
         };
     }
 
-    export default class OnClickOutsideComponent extends Component<OnClickOutsideSignature> {}
+    export default class OnClickOutsideComponent<K extends keyof DocumentEventMap = 'click'> extends Component<
+        OnClickOutsideSignature<K>
+    > {}
 }

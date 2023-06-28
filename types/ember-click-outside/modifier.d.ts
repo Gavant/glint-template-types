@@ -1,7 +1,7 @@
 declare module 'ember-click-outside/modifiers/on-click-outside' {
     import Modifier from 'ember-modifier';
 
-    interface OnClickOutsideSignature<K extends keyof DocumentEventMap = 'click'> {
+    interface OnClickOutsideSignature<K extends keyof DocumentEventMap> {
         Args: {
             Named: {
                 /** Undocumented */
@@ -17,5 +17,7 @@ declare module 'ember-click-outside/modifiers/on-click-outside' {
         };
     }
 
-    export default class OnClickOutsideModifier extends Modifier<OnClickOutsideSignature> {}
+    export default class OnClickOutsideModifier<K extends keyof DocumentEventMap = 'click'> extends Modifier<
+        OnClickOutsideSignature<K>
+    > {}
 }
