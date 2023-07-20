@@ -34,6 +34,11 @@ declare module 'ember-basic-dropdown/components/basic-dropdown' {
         onOpen?: Function;
         onClose?: Function;
         calculatePosition?: CalculatePosition;
+
+        rootEventType?: boolean;
+        preventScroll?: boolean;
+        // triggerComponent: ComponentLike;
+        // contentComponent: ComponentLike;
     }
 
     type RepositionChanges = {
