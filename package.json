@@ -58,7 +58,33 @@
         "ember-intl": "^5.7.2",
         "ember-modifier": "^3.2.7",
         "ember-power-select": "^5.0.0",
-        "ember-source": "^3.28.0 | ^4.0.0"
+        "ember-source": "^3.28.0 | ^4.0.0 | ^5.0.0"
+    },
+    "peerDependenciesMeta": {
+        "ember-animated": {
+            "optional": true
+        },
+        "ember-basic-dropdown": {
+            "optional": true
+        },
+        "ember-concurrency": {
+            "optional": true
+        },
+        "ember-concurrency-async": {
+            "optional": true
+        },
+        "ember-concurrency-ts": {
+            "optional": true
+        },
+        "ember-intl": {
+            "optional": true
+        },
+        "ember-modifier": {
+            "optional": true
+        },
+        "ember-power-select": {
+            "optional": true
+        }
     },
     "publishConfig": {
         "access": "public"
