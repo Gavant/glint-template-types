@@ -25,7 +25,7 @@ declare module '@fortawesome/ember-fontawesome/components/fa-icon' {
             flip?: FlipProp;
             spin?: boolean;
             fixedWidth?: boolean;
-            transform?: Transform;
+            transform?: Transform | string;
             symbol?: boolean;
         };
     }
