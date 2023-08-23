@@ -62,6 +62,7 @@ declare module 'ember-power-select/components/power-select' {
         defaultHighlighted?: any;
         destination?: string;
         disabled?: boolean;
+        dropdownClass?: string;
         ebdContentComponent?: SafeComponentStringOrComponent;
         ebdTriggerComponent?: SafeComponentStringOrComponent;
         eventType?: string;
@@ -102,6 +103,7 @@ declare module 'ember-power-select/components/power-select' {
         selectedItemComponent?: SafeComponentStringOrComponent;
         tabindex?: number | string;
         triggerComponent?: SafeComponentStringOrComponent;
+        triggerClass?: string;
         triggerId?: string;
         typeAheadOptionMatcher?: MatcherFn;
         verticalPosition?: string;
