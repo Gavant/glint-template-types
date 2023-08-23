@@ -70,7 +70,7 @@ declare module 'ember-power-select/components/power-select' {
         groupComponent?: SafeComponentStringOrComponent;
         handleFocus?: (select: Select, event: FocusEvent) => void;
         highlightOnHover?: boolean;
-        horizontalPosition?: string;
+        horizontalPosition?: 'auto' | 'left' | 'center' | 'right';
         initiallyOpened?: boolean;
         loadingMessage?: string;
         matcher?: MatcherFn;
@@ -106,7 +106,7 @@ declare module 'ember-power-select/components/power-select' {
         triggerClass?: string;
         triggerId?: string;
         typeAheadOptionMatcher?: MatcherFn;
-        verticalPosition?: string;
+        verticalPosition?: 'auto' | 'above' | 'below';
     }
 
     export interface PowerSelectSignature<O> {
