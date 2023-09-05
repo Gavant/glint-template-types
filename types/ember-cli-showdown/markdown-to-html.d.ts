@@ -213,6 +213,12 @@ declare module 'ember-cli-showdown/components/markdown-to-html' {
                  * @default false
                  */
                 splitAdjacentBlockquotes?: boolean;
+
+                /**
+                 * Showdowon extensions to load.
+                 * @default null
+                 */
+                extensions?: string[] | string | null;
             };
         };
     }
