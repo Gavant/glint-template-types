@@ -59,7 +59,7 @@
         "ember-intl": "^5.7.2",
         "ember-modifier": "^3.2.7",
         "ember-power-select": "^5.0.0",
-        "ember-source": "^3.28.0 | ^4.0.0 | ^5.0.0"
+        "ember-source": "^3.28.0 || ^4.0.0 || ^5.0.0"
     },
     "peerDependenciesMeta": {
         "ember-animated": {
