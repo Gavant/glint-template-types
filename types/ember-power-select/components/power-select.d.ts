@@ -84,7 +84,7 @@ declare module 'ember-power-select/components/power-select' {
         onInput?: (term: string, select: Select, e: Event) => string | false | void;
         onKeydown?: (select: Select, e: KeyboardEvent) => boolean | undefined;
         onOpen?: (select: Select, e: Event) => boolean | undefined;
-        options: O[] | Promise<O[]> | PromiseProxy<O[]>;
+        options: O[] | Promise<O[]> | PromiseProxy<O[]> | readonly O[];
         optionsComponent?: SafeComponentStringOrComponent;
         placeholderComponent?: SafeComponentStringOrComponent;
         placeholder?: string;
