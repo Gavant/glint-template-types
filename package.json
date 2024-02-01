@@ -1,6 +1,6 @@
 {
     "name": "@gavant/glint-template-types",
-    "version": "0.3.6",
+    "version": "0.4.0",
     "description": "Template types for ember/glimmer glint",
     "repository": "https://github.com/Gavant/glint-template-types.git",
     "scripts": {
