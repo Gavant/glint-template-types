@@ -2,7 +2,7 @@ import AndHelper from 'ember-truth-helpers/helpers/and';
 
 import { expectTypeOf } from 'expect-type';
 
-import { ReturnOf } from '../util';
+import type { ReturnOf } from '../util';
 
 // string could be an empty string and get returned, otherwse we get null
 declare const return1: ReturnOf<AndHelper<string, null, undefined, number | null>>;
