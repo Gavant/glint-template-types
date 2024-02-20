@@ -78,7 +78,7 @@ declare module 'ember-power-select/components/power-select' {
         noMatchesMessage?: string;
         noMatchesMessageComponent?: SafeComponentStringOrComponent;
         onBlur?: (select: Select, event: FocusEvent) => void;
-        onChange: (selection: O, select: Select, event?: Event) => void;
+        onChange: (selection: O, select?: Select, event?: Event) => void;
         onClose?: (select: Select, e: Event) => boolean | undefined;
         onFocus?: (select: Select, event: FocusEvent) => void;
         onInput?: (term: string, select: Select, e: Event) => string | false | void;
